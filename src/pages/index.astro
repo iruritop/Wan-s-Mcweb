@@ -261,10 +261,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         setLoadingState();
         
         try {
-            const apiUrl = `${apiEndpoint}/${apiAddress}:${port}`;
-            console.log('API请求URL:', apiUrl);
+            const statusUrl = `https://mcapi.us/server/status?ip=${apiAddress}&port=${port}`;
+            console.log('API请求URL:', statusUrl);
             
-            const response = await fetch(apiUrl, {
+            const response = await fetch(statusUrl, {
                 headers: { 'Accept': 'application/json' }
             });
             
@@ -274,8 +274,21 @@ document.addEventListener('DOMContentLoaded', async function() {
                 throw new Error(`API响应异常: ${response.status} ${response.statusText}`);
             }
             
-            const data = await response.json();
-            console.log('API响应数据:', data);
+            const raw = await response.json();
+            console.log('API原始数据:', raw);
+            
+            // mcapi.us → mcstatus.io 格式转换
+            const data = {
+                online: raw.online || false,
+                players: {
+                    online: raw.players?.now || 0,
+                    max: raw.players?.max || '?',
+                    list: (raw.players?.sample || []).map(p => ({ name_clean: p.name }))
+                },
+                version: { name_clean: raw.server?.name || '—' },
+                motd: { clean: raw.motd || '—' },
+                icon: raw.favicon || null
+            };
             
             // 更新在线玩家显示（顶部卡片）
             if (data.online) {
