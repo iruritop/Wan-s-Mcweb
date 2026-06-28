@@ -208,7 +208,7 @@ export const websiteConfig = {
 
   // 页脚配置
   footer: {
-    copyright: "© 2025-2026 乌托邦探险之旅保留所有权利.",
+    copyright: "© 2026 乌托邦探险之旅保留所有权利.",
     customHtml: `
       <!-- 在这里插入自定义HTML代码，比如备案信息 -->
       <div style='display: flex; justify-content: center; align-items: center; width: 100%;'><a target='_blank' href='https://beian.miit.gov.cn/'><img src='/foot/foot-icp.svg' style='display: block;'></a></div>
