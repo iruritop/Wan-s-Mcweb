@@ -2,10 +2,10 @@
 export const websiteConfig = {
   // 网站基本信息
   site: {
-    title: "晚晚服",
-    description: "欢迎来到晚晚服，探索无限可能的方块世界！",
-    keywords: "Minecraft,服务器,我的世界,Java版,生存,创造,生电",
-    author: "晚晚服",
+    title: "乌托邦探险之旅",
+    description: "欢迎来到乌托邦探险之旅，探索无限可能的方块世界！",
+    keywords: "Minecraft,服务器,我的世界,乌托邦,生存,探险,Fabric",
+    author: "乌托邦探险之旅",
     language: "zh-CN"
   },
 
@@ -24,7 +24,7 @@ export const websiteConfig = {
         pageTitle: {
           // 主标题配置（支持打字机效果）
           mainTitle: {
-            texts: ["欢迎来到 晚晚服", "Welcome to DuskCraft"], // 多语言标题数组
+            texts: ["欢迎来到 乌托邦探险之旅", "Welcome to Utopia Journey"], // 多语言标题数组
             typewriter: {
               enabled: true, // 是否启用打字机效果
               speed: 100,    // 打字速度（毫秒）
@@ -67,7 +67,7 @@ export const websiteConfig = {
         externalUrl: "", // 外链地址（仅在external为true时生效）
         pageTitle: {
           mainTitle: {
-            texts: ["晚晚服服历程", "DCS History"],
+            texts: ["乌托邦探险之旅历程", "Utopia Journey History"],
             typewriter: {
               enabled: true,
               speed: 100,
@@ -137,6 +137,7 @@ export const websiteConfig = {
       "/backgrounds/desktopWallpaper_5.webp",
       "/backgrounds/desktopWallpaper_6.webp",
       "/backgrounds/desktopWallpaper_7.webp",
+      "/backgrounds/desktopWallpaper_8.webp",
     ],
     defaultImage: "/backgrounds/default.webp"
   },
@@ -197,17 +198,17 @@ export const websiteConfig = {
   // 服务器配置
   server: {
     // 页面显示的服务器地址
-    displayAddress: "w-6.cc",
+    displayAddress: "mc.coul.top",
     // API请求使用的服务器地址（可以不同）
-    apiAddress: "ipv4.w-6.cc",
-    port: "25565",
-    version: "1.21.4",
+    apiAddress: "mc.coul.top",
+    port: "23007",
+    version: "1.20.1",
     apiEndpoint: "https://api.mcstatus.io/v2/status/java",
   },
 
   // 页脚配置
   footer: {
-    copyright: "© 2022-2026 晚晚服保留所有权利.",
+    copyright: "© 2025-2026 乌托邦探险之旅保留所有权利.",
     customHtml: `
       <!-- 在这里插入自定义HTML代码，比如备案信息 -->
       <div style='display: flex; justify-content: center; align-items: center; width: 100%;'><a target='_blank' href='https://beian.miit.gov.cn/'><img src='/foot/foot-icp.svg' style='display: block;'></a></div>
@@ -329,13 +330,13 @@ export const websiteConfig = {
         title: "服务器信息",
         icon: "information",
         items: [
-          { label: "服务器类别", value: "物理机" },
-          { label: "CPU", value: "i9-13900kf" },
-          { label: "内存", value: "128GB DDR5" },  
-          { label: "类型", value: "生存，生电，建筑" },
-          { label: "最大玩家", value: "100人" },
-          { label: "在线时间", value: "7X24小时" }
-        ]
+            { label: "服务器类别", value: "物理机" },
+            { label: "CPU", value: "Intel 8核 3.10GHz" },
+            { label: "内存", value: "40GB" },  
+            { label: "类型", value: "生存，探险，建筑" },
+            { label: "最大玩家", value: "15人" },
+            { label: "在线时间", value: "7×24小时" }
+          ]
       },
       
       // 特色功能板块
@@ -359,9 +360,10 @@ export const websiteConfig = {
         title: "管理团队",
         icon: "shield-account",
         items: [
-          { label: "_YUTONG_", value: "腐竹-物理服主！" },
-          { label: "wanwan_jiean", value: "腐竹-技术和主要管理" },
-          { label: "CrazyPastor", value: "腐竹-不务正业" }
+          { label: "coul", value: "腐竹-物理服主" },
+          { label: "DaNeng520", value: "技术和主要管理" },
+          { label: "iruri", value: "腐竹-不务正业" },
+          { label: "Figure_Arnold", value: "游戏咨询" }
         ]
       }
     },
@@ -398,11 +400,11 @@ export const websiteConfig = {
       items: [
         {
           title: "QQ群",
-          subtitle: "加入官方 QQ 群交流",
+          subtitle: "乐子乌托邦atm9",
           icon: "qqchat",
           buttonText: "加入 QQ 群",
           buttonType: "secondary",
-          url: "https://qm.qq.com/q/mVvrLcbLvU"
+          url: "https://qm.qq.com/q/E2cRPx3YFc"
         },
         {
           title: "邮箱",
@@ -410,7 +412,7 @@ export const websiteConfig = {
           icon: "email",
           buttonText: "发送邮件",
           buttonType: "secondary",
-          url: "mailto:me@wanfory.top"
+          url: "mailto:3169563787@qq.com"
         }
       ]
     },

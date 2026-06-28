@@ -1,0 +1,266 @@
+/* 全局样式 - 基于奶油白风格和毛玻璃效果 */
+
+/* 自定义字体定义 */
+@font-face {
+  font-family: '像素体';
+  src: url('/fonts/像素体.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* 日间模式颜色 - 奶油白风格 */
+  --color-primary: #ff8eb7;     /* 樱花粉 */
+  --color-secondary: #a6e3e9;   /* 薄荷蓝 */
+  --color-accent: #ffd166;      /* 奶油黄 */
+  --color-success: #7befb2;     /* 清新绿 */
+  --color-warning: #ff9a76;     /* 珊瑚橙 */
+  --color-info: #79c7ff;        /* 天空蓝 */
+
+  /* 背景与文字 */
+  --color-bg: #fef7f0;          /* 奶油白背景 */
+  --color-card-bg: rgba(255, 255, 255, 0.9);
+  --color-text: #5a4b81;        /* 深紫色文字 */
+  --color-text-light: #887aaa;
+  --color-border: rgba(168, 153, 255, 0.2);
+
+  /* 玻璃质感效果 */
+  --glass-bg: rgba(255, 255, 255, 0.4);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-shadow: 0 12px 40px rgba(168, 153, 255, 0.15);
+  --glass-backdrop: blur(20px) saturate(180%);
+
+  /* 弹性圆角系统 */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 30px;
+  --radius-xl: 50px;
+  --radius-full: 9999px;
+
+  /* 弹性动画曲线 */
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-elastic: cubic-bezier(0.5, 1.8, 0.5, 1);
+
+  /* 弹性阴影系统 */
+  --shadow-sm: 0 4px 12px rgba(168, 153, 255, 0.1);
+  --shadow-md: 0 8px 24px rgba(168, 153, 255, 0.15);
+  --shadow-lg: 0 16px 48px rgba(168, 153, 255, 0.2);
+  --shadow-xl: 0 24px 64px rgba(168, 153, 255, 0.25);
+
+  /* 字体系统 - 通过配置文件动态设置 */
+  --font-main: '像素体', 'Quicksand', 'Noto Sans SC', sans-serif;
+  --font-title: '像素体', 'Quicksand', 'Noto Sans SC', sans-serif;
+}
+
+/* 夜间模式 */
+[data-theme="dark"] {
+  --color-bg: #1a1a2e;          /* 深蓝背景 */
+  --color-card-bg: rgba(30, 30, 46, 0.9);
+  --color-text: #cdd6f4;        /* 浅色文字 */
+  --color-text-light: #a6adc8;
+  --color-border: rgba(108, 112, 134, 0.3);
+
+  --glass-bg: rgba(30, 30, 46, 0.4);
+  --glass-border: rgba(108, 112, 134, 0.3);
+  --glass-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* 基础重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  transition: background-color 0.3s var(--ease-smooth), color 0.3s var(--ease-smooth);
+  overflow-x: hidden;
+}
+
+/* 背景图片系统 */
+.background-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* 背景图片 */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-smooth);
+}
+
+.background-image.active {
+  opacity: 1;
+}
+
+.background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, 
+    var(--color-bg) 0%, 
+    transparent 30%, 
+    transparent 70%, 
+    var(--color-bg) 100%
+  );
+  opacity: 0.8;
+  z-index: 1;
+}
+
+/* 主内容区域 */
+.main-content {
+  min-height: 100vh;
+  padding-top: 70px; /* 导航栏高度 */
+  position: relative;
+  z-index: 0;
+}
+
+/* 通用卡片样式 */
+.card {
+  background: var(--color-card-bg);
+  backdrop-filter: var(--glass-backdrop);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  margin: 1rem 0;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* 按钮样式 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--radius-full);
+  font-family: var(--font-main);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-smooth);
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background: var(--glass-bg);
+  color: var(--color-text);
+  border: 1px solid var(--glass-border);
+}
+
+.btn-secondary:hover {
+  background: var(--color-card-bg);
+  transform: translateY(-2px);
+}
+
+/* 页面容器 */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+    margin: 0.5rem 0;
+  }
+}
+
+/* 加载动画 */
+.fade-in {
+  animation: fadeIn 0.6s var(--ease-smooth);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--glass-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* 选择文本样式 */
+::selection {
+  background: var(--color-primary);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--color-primary);
+  color: white;
+}
