@@ -221,19 +221,45 @@ body {
   padding: 2rem;
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
+/* ===== 三端响应式 ===== */
+
+/* 平板 (640px - 1024px) */
+@media (min-width: 640px) and (max-width: 1024px) {
   .page-container {
-    padding: 1rem;
-  }
-  
-  .page-title {
-    font-size: 2.5rem;
-  }
-  
-  .card {
+    max-width: 90%;
     padding: 1.5rem;
+  }
+
+  .card {
+    padding: 1.75rem;
+  }
+}
+
+/* 手机 (< 768px) */
+@media (max-width: 767px) {
+  .page-container {
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 1.25rem;
     margin: 0.5rem 0;
+    border-radius: var(--radius-md);
+  }
+
+  body {
+    font-size: 15px;
+  }
+}
+
+/* 大桌面 (> 1200px) */
+@media (min-width: 1200px) {
+  .page-container {
+    max-width: 1300px;
+  }
+
+  .card {
+    padding: 2.5rem;
   }
 }
 
