@@ -151,12 +151,13 @@ body {
   box-shadow: var(--shadow-md);
   padding: 2rem;
   margin: 1rem 0;
-  transition: all 0.3s var(--ease-smooth);
+  transition: transform 0.35s var(--ease-spring), box-shadow 0.35s var(--ease-smooth), border-color 0.3s var(--ease-smooth);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary);
 }
 
 /* 按钮样式 */
@@ -171,8 +172,15 @@ body {
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s var(--ease-smooth);
+  transition: all 0.25s var(--ease-smooth);
   gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: scale(0.95);
+  transition: all 0.1s var(--ease-smooth);
 }
 
 .btn-primary {
@@ -186,6 +194,11 @@ body {
   box-shadow: var(--shadow-md);
 }
 
+.btn-primary:active {
+  transform: scale(0.95);
+  box-shadow: var(--shadow-sm);
+}
+
 .btn-secondary {
   background: var(--glass-bg);
   color: var(--color-text);
@@ -197,6 +210,10 @@ body {
   transform: translateY(-2px);
 }
 
+.btn-secondary:active {
+  transform: scale(0.95);
+}
+
 /* 页面容器 */
 .page-container {
   max-width: 1200px;
@@ -204,19 +221,45 @@ body {
   padding: 2rem;
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
+/* ===== 三端响应式 ===== */
+
+/* 平板 (640px - 1024px) */
+@media (min-width: 640px) and (max-width: 1024px) {
   .page-container {
-    padding: 1rem;
-  }
-  
-  .page-title {
-    font-size: 2.5rem;
-  }
-  
-  .card {
+    max-width: 90%;
     padding: 1.5rem;
+  }
+
+  .card {
+    padding: 1.75rem;
+  }
+}
+
+/* 手机 (< 768px) */
+@media (max-width: 767px) {
+  .page-container {
+    padding: 0.75rem;
+  }
+
+  .card {
+    padding: 1.25rem;
     margin: 0.5rem 0;
+    border-radius: var(--radius-md);
+  }
+
+  body {
+    font-size: 15px;
+  }
+}
+
+/* 大桌面 (> 1200px) */
+@media (min-width: 1200px) {
+  .page-container {
+    max-width: 1300px;
+  }
+
+  .card {
+    padding: 2.5rem;
   }
 }
 
