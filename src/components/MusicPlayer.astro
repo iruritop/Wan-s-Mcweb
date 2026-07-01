@@ -429,7 +429,11 @@ document.addEventListener('DOMContentLoaded', () => {
 .ctrl-btn.ctrl-play:hover { transform: scale(1.14); }
 .ctrl-btn.ctrl-sm { padding: 0.35rem; font-size: 0.9rem; }
 .volume-bar {
-    width: 50px; height: 4px; background: var(--glass-bg); border-radius: 2px; cursor: pointer;
+    width: 72px; height: 6px; background: var(--glass-bg); border-radius: 3px; cursor: pointer;
+    position: relative;
+}
+.volume-bar::after {
+    content: ''; position: absolute; inset: -6px -4px;
 }
 .volume-fill { height: 100%; background: var(--color-primary); border-radius: 2px; width: 80%; }
 
@@ -508,7 +512,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .song-title { font-size: 0.9rem; }
     .ctrl-btn { padding: 0.45rem; font-size: 1rem; }
     .ctrl-btn.ctrl-play { width: 38px; height: 38px; font-size: 1.15rem; }
-    .volume-bar { width: 45px; }
+    .volume-bar { width: 60px; }
     .playlist { max-height: 150px; }
 }
 
