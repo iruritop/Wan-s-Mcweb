@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions';
 import { websiteConfig } from '../config/website.config.js';
 import Navigation from '../components/Navigation.astro';
 import MusicPlayer from '../components/MusicPlayer.astro';
@@ -19,7 +20,10 @@ const { title, description } = Astro.props;
     <meta name="author" content={websiteConfig.site.author} />
     
     <title>{title ? `${title} - ${websiteConfig.site.title}` : websiteConfig.site.title}</title>
-    
+
+    <!-- 页面过渡动画 -->
+    <ViewTransitions />
+
     <!-- 预加载字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
