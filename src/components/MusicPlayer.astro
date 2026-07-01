@@ -2,7 +2,7 @@
 import { websiteConfig } from '../config/website.config.js';
 ---
 
-<div id="music-player" class="music-player">
+<div id="music-player" class="music-player" transition:persist>
     <!-- 播放器按钮 -->
     <button id="music-toggle" class="music-toggle" aria-label="音乐播放器">
         <i class="mdi mdi-music"></i>
@@ -221,8 +221,12 @@ function updatePlaylistUI(filter = '') {
     });
 }
 
-// Init
+// Init — 防止 ViewTransitions 切页重复初始化
 document.addEventListener('DOMContentLoaded', () => {
+    // 如果已初始化过，只重新绑定 DOM 引用
+    if (window.__musicInitialized) return;
+    window.__musicInitialized = true;
+    
     audio = new Audio();
     audio.volume = volume;
     audio.addEventListener('loadedmetadata', updateDuration);
