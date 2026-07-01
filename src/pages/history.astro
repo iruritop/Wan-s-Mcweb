@@ -308,29 +308,30 @@ const historyData = await getHistoryData(websiteConfig.history);
       }
 
       .timeline-date {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.5rem;
-        white-space: normal;
-        word-break: break-all;
-        max-width: 60px;
+        font-size: 0.68rem;
+        padding: 0.15rem 0.4rem;
+        white-space: nowrap;
+        max-width: none;
+        letter-spacing: -0.02em;
       }
 
     }
 
     @media (max-width: 399px) {
-      .timeline::before { left: 20px; }
-      .timeline-marker { left: 20px; }
+      .timeline::before { left: 18px; }
+      .timeline-marker { left: 18px; }
       .timeline-content {
-        width: calc(100% - 60px);
-        left: 60px !important;
+        width: calc(100% - 56px);
+        left: 56px !important;
       }
       .timeline-date {
-        font-size: 0.65rem;
-        max-width: 44px;
-        padding: 0.15rem 0.35rem;
+        font-size: 0.6rem;
+        padding: 0.1rem 0.3rem;
+        white-space: nowrap;
+        max-width: none;
       }
       .timeline-dot {
-        width: 14px; height: 14px;
+        width: 12px; height: 12px;
       }
     }
 
