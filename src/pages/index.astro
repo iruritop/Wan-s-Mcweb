@@ -854,4 +854,14 @@ document.addEventListener('DOMContentLoaded', async function() {
         gap: 3rem;
     }
 }
+
+@media (max-width: 399px) {
+    .server-info-card { padding: 1.5rem 1rem; }
+    .server-status-card { padding: 1.5rem 1rem; }
+    #serverAddress { font-size: 1rem; padding: 0.6rem; }
+    .stat-value { font-size: 1.2rem; }
+    .players-list { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); max-height: 120px; }
+    .player-item { font-size: 0.75rem; padding: 0.3rem; }
+    .detail-value { font-size: 0.9rem; }
+}
 </style>
