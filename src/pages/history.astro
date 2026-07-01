@@ -32,11 +32,12 @@ const historyData = await getHistoryData(websiteConfig.history);
                 <div class="history-card">
                   <!-- 图片区域 -->
                   <div class="history-image-container">
-                    <img 
-                      src={item.thumbnailUrl} 
+                    <img
+                      src={item.thumbnailUrl}
                       alt={item.title}
                       class="history-image"
                       loading="lazy"
+                      decoding="async"
                       data-fullsize={item.imageUrl}
                     />
                     <div class="image-overlay">
@@ -77,7 +78,7 @@ const historyData = await getHistoryData(websiteConfig.history);
           <button class="nav-btn prev-btn">
             <i class="mdi mdi-chevron-left"></i>
           </button>
-          <img id="modal-image" src="" alt="" />
+          <img id="modal-image" src="" alt="" loading="lazy" decoding="async" />
           <button class="nav-btn next-btn">
             <i class="mdi mdi-chevron-right"></i>
           </button>

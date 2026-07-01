@@ -80,10 +80,11 @@ const description = "了解服务器的详细信息和管理团队";
                         {formattedMembers.map((member, index) => (
                             <div class="member-card card" key={index}>
                                 <div class="member-avatar">
-                                    <img 
-                                        src={member.avatar} 
+                                    <img
+                                        src={member.avatar}
                                         alt={member.name}
                                         loading="lazy"
+                                        decoding="async"
                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                                     />
                                     <i class="mdi mdi-account fallback-icon" style="display: none;"></i>

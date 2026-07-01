@@ -40,11 +40,12 @@ const categories = extractCategories(galleryImages);
                 {galleryImages.map(image => (
                     <div class="gallery-item card" data-category={image.category}>
                         <div class="gallery-image-container">
-                            <img 
+                            <img
                                 src={image.thumbnailUrl}
                                 alt={image.description}
                                 class="gallery-image"
                                 loading="lazy"
+                                decoding="async"
                                 data-fullsize={image.imageUrl}
                             />
                             <div class="gallery-overlay">
@@ -79,7 +80,7 @@ const categories = extractCategories(galleryImages);
                     <button class="nav-btn prev-btn">
                         <i class="mdi mdi-chevron-left"></i>
                     </button>
-                    <img id="modal-image" src="" alt="" />
+                    <img id="modal-image" src="" alt="" loading="lazy" decoding="async" />
                     <button class="nav-btn next-btn">
                         <i class="mdi mdi-chevron-right"></i>
                     </button>

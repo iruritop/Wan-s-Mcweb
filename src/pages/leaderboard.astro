@@ -123,10 +123,11 @@ const updateTime = formatUpdateTime(leaderboardData.export_time);
                                                     </div>
                                                     <div class="player-info">
                                                         <div class="player-avatar">
-                                                            <img 
-                                                                src={`https://crafthead.net/avatar/${encodeURIComponent(score.player)}`} 
+                                                            <img
+                                                                src={`https://crafthead.net/avatar/${encodeURIComponent(score.player)}`}
                                                                 alt={score.player}
                                                                 loading="lazy"
+                                                                decoding="async"
                                                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                                                             />
                                                             <i class="mdi mdi-account fallback-icon" style="display: none;"></i>
@@ -143,7 +144,7 @@ const updateTime = formatUpdateTime(leaderboardData.export_time);
                                                 </div>
                                             );
                                         })}
-                                        
+
                                         {/* 查看更多按钮 */}
                                         {hasMore && (
                                             <div class="show-more-container">
@@ -153,7 +154,7 @@ const updateTime = formatUpdateTime(leaderboardData.export_time);
                                                 </button>
                                             </div>
                                         )}
-                                        
+
                                         {/* 隐藏的剩余数据 */}
                                         {hasMore && (
                                             <div class="hidden-scores" style="display: none;">
@@ -172,10 +173,11 @@ const updateTime = formatUpdateTime(leaderboardData.export_time);
                                                             </div>
                                                             <div class="player-info">
                                                                 <div class="player-avatar">
-                                                                    <img 
-                                                                        src={`https://crafthead.net/avatar/${encodeURIComponent(score.player)}`} 
+                                                                    <img
+                                                                        src={`https://crafthead.net/avatar/${encodeURIComponent(score.player)}`}
                                                                         alt={score.player}
                                                                         loading="lazy"
+                                                                        decoding="async"
                                                                         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                                                                     />
                                                                     <i class="mdi mdi-account fallback-icon" style="display: none;"></i>
