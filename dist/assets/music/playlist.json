@@ -79,12 +79,6 @@
       "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951169009526791"
     },
     {
-      "title": "After the Afterparty",
-      "artist": "Charli xcx/Lil Yachty",
-      "url": "/assets/music/Charli xcx_Lil Yachty - After the Afterparty.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=18655413789266270"
-    },
-    {
       "title": "街灯晚餐",
       "artist": "卫兰",
       "url": "/assets/music/卫兰 - 街灯晚餐.mp3",
@@ -151,15 +145,9 @@
       "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951169338449904"
     },
     {
-      "title": "At The Edge",
-      "artist": "千坂",
-      "url": "/assets/music/千坂 - At The Edge.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951163825143640"
-    },
-    {
       "title": "孤雏",
       "artist": "高睿",
-      "url": "/assets/music/AGA - 孤雏.mp3",
+      "url": "/assets/music/高睿 - 孤雏.mp3",
       "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951167879363210"
     },
     {
@@ -199,124 +187,10 @@
       "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951166195459631"
     },
     {
-      "title": "深海少女",
-      "artist": "のぶなが/ゆうゆ",
-      "url": "/assets/music/のぶなが_ゆうゆ - 深海少女.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=18722483998223156"
-    },
-    {
-      "title": "ただ声一つ",
-      "artist": "ロクデナシ/MIMI",
-      "url": "/assets/music/ロクデナシ_MIMI - ただ声一つ.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951166778043030"
-    },
-    {
-      "title": "Dancin (Krono Remix)",
-      "artist": "Aaron Smith/Luvli/Krono",
-      "url": "/assets/music/Aaron Smith_Luvli_Krono - Dancin (Krono Remix).mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951172818629279"
-    },
-    {
-      "title": "打上花火",
-      "artist": "Daoko/米津玄師",
-      "url": "/assets/music/Daoko_米津玄師 - 打上花火.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951163009282836"
-    },
-    {
-      "title": "secret base ~君がくれたもの~ (10 years after Ver.)",
-      "artist": "茅野愛衣/戸松遥/早見沙織",
-      "url": "/assets/music/茅野愛衣_戸松遥_早見沙織 - secret base ~君がくれたもの~ (10 years after Ver.).mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951166198069948"
-    },
-    {
-      "title": "だから僕は音楽を辞めた",
-      "artist": "ヨルシカ",
-      "url": "/assets/music/ヨルシカ - だから僕は音楽を辞めた.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951170245162530"
-    },
-    {
       "title": "Every Time We Touch",
       "artist": "Dream Tunes",
       "url": "/assets/music/Dream Tunes - Every Time We Touch.mp3",
       "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951167713893315"
-    },
-    {
-      "title": "Sunshine Girl",
-      "artist": "moumoon",
-      "url": "/assets/music/moumoon - Sunshine Girl.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=18591642115850247"
-    },
-    {
-      "title": "Señorita",
-      "artist": "Shawn Mendes/Camila Cabello",
-      "url": "/assets/music/Shawn Mendes_Camila Cabello - Señorita.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951164162885535"
-    },
-    {
-      "title": "Welcome To New York",
-      "artist": "Taylor Swift",
-      "url": "/assets/music/Taylor Swift - Welcome To New York.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=18771962022688349"
-    },
-    {
-      "title": "Boom Clap (From the Motion Picture Das Schicksal ist ein mieser Verräter)",
-      "artist": "Charli xcx",
-      "url": "/assets/music/Charli xcx - Boom Clap (From the Motion Picture Das Schicksal ist ein mieser Verräter).mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951165481942256"
-    },
-    {
-      "title": "Wild",
-      "artist": "Monogem",
-      "url": "/assets/music/Monogem - Wild.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951168557241993"
-    },
-    {
-      "title": "Count The Hours",
-      "artist": "BEAUZ/Nevve/Kastilione",
-      "url": "/assets/music/BEAUZ_Nevve_Kastilione - Count The Hours.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951164315683664"
-    },
-    {
-      "title": "Good Time",
-      "artist": "Owl City/Carly Rae Jepsen",
-      "url": "/assets/music/Owl City_Carly Rae Jepsen - Good Time.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951167115487981"
-    },
-    {
-      "title": "Nevada",
-      "artist": "Vicetone/Cozi Zuehlsdorff",
-      "url": "/assets/music/Vicetone_Cozi Zuehlsdorff - Nevada.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951163640412456"
-    },
-    {
-      "title": "Payphone",
-      "artist": "ALEMA/Robbe",
-      "url": "/assets/music/ALEMA_Robbe - Payphone.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951169746564196"
-    },
-    {
-      "title": "STAY",
-      "artist": "The Kid LAROI/Justin Bieber",
-      "url": "/assets/music/The Kid LAROI_Justin Bieber - STAY.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951166155165682"
-    },
-    {
-      "title": "僕らの手には何もないけど、",
-      "artist": "RAM WIRE",
-      "url": "/assets/music/RAM WIRE - 僕らの手には何もないけど、.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951166202884757"
-    },
-    {
-      "title": "One Last Time (feat. Corey Gray)",
-      "artist": "Ebony Day/Corey Gray",
-      "url": "/assets/music/Ebony Day_Corey Gray - One Last Time (feat. Corey Gray).mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951170381211501"
-    },
-    {
-      "title": "Fool For You",
-      "artist": "KASTRA",
-      "url": "/assets/music/KASTRA - Fool For You.mp3",
-      "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951172361066641"
     },
     {
       "title": "起风了",
@@ -331,5 +205,5 @@
       "cover": "https://api.injahow.cn/meting/?server=netease&type=pic&id=109951163270254519"
     }
   ],
-  "total": 55
+  "total": 34
 }
