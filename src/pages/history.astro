@@ -307,7 +307,31 @@ const historyData = await getHistoryData(websiteConfig.history);
         text-align: left !important;
       }
 
+      .timeline-date {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
+        white-space: normal;
+        word-break: break-all;
+        max-width: 60px;
+      }
 
+    }
+
+    @media (max-width: 399px) {
+      .timeline::before { left: 20px; }
+      .timeline-marker { left: 20px; }
+      .timeline-content {
+        width: calc(100% - 60px);
+        left: 60px !important;
+      }
+      .timeline-date {
+        font-size: 0.65rem;
+        max-width: 44px;
+        padding: 0.15rem 0.35rem;
+      }
+      .timeline-dot {
+        width: 14px; height: 14px;
+      }
     }
 
     /* 无数据样式 */

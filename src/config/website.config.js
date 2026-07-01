@@ -344,7 +344,6 @@ export const websiteConfig = {
         items: [
           { label: "IPV4网络", value: "✓" },
           { label: "IPV6网络", value: "✓" },
-          { label: "镜像服务器", value: "✓" },
           { label: "双重备份", value: "✓" },
           { label: "群服互通", value: "✓" },
           { label: "联机工具提供", value: "✓" }
@@ -358,7 +357,7 @@ export const websiteConfig = {
         icon: "shield-account",
         items: [
           { label: "coul", value: "腐竹-物理服主" },
-          { label: "DaNeng520", value: "技术和主要管理" },
+          { label: "DaNeng520", value: "技术和管理" },
           { label: "iruri", value: "腐竹-不务正业" },
           { label: "Figure_Arnold", value: "游戏咨询" }
         ]
