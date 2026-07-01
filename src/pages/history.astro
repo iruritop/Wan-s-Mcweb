@@ -334,6 +334,25 @@ const historyData = await getHistoryData(websiteConfig.history);
         width: 12px; height: 12px;
       }
     }
+    
+    /* 超窄手机 <350px */
+    @media (max-width: 349px) {
+      .timeline::before { left: 14px; }
+      .timeline-marker { left: 14px; }
+      .timeline-content {
+        width: calc(100% - 48px);
+        left: 48px !important;
+      }
+      .timeline-date {
+        font-size: 0.55rem;
+        padding: 0.08rem 0.2rem;
+        white-space: nowrap;
+      }
+      .timeline-dot { width: 10px; height: 10px; }
+      .timeline-content .card { padding: 0.7rem; }
+      .timeline-content h3 { font-size: 0.85rem; }
+      .timeline-content p { font-size: 0.7rem; }
+    }
 
     /* 无数据样式 */
     .no-data {
