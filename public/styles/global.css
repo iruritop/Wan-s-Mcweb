@@ -25,7 +25,12 @@
   --color-card-bg: rgba(255, 255, 255, 0.9);
   --color-text: #5a4b81;        /* 深紫色文字 */
   --color-text-light: #887aaa;
+  --color-text-secondary: #887aaa;  /* 别名，兼容引用 */
+  --color-background: var(--color-bg);  /* 别名，兼容引用 */
   --color-border: rgba(168, 153, 255, 0.2);
+
+  /* RGB 值供 rgba() 使用 */
+  --color-primary-rgb: 255, 142, 183;
 
   /* 玻璃质感效果 */
   --glass-bg: rgba(255, 255, 255, 0.4);
@@ -63,6 +68,8 @@
   --color-card-bg: rgba(30, 30, 46, 0.9);
   --color-text: #cdd6f4;        /* 浅色文字 */
   --color-text-light: #a6adc8;
+  --color-text-secondary: #a6adc8;
+  --color-background: var(--color-bg);
   --color-border: rgba(108, 112, 134, 0.3);
 
   --glass-bg: rgba(30, 30, 46, 0.4);

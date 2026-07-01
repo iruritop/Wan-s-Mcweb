@@ -68,6 +68,7 @@ const categories = extractCategories(galleryImages);
 
             <!-- 提示信息 -->
             <div class="gallery-end-message">
+                <i class="mdi mdi-emoticon-sad-outline"></i>
                 <p>已经没有更多了(T＿T)  快进服创造属于你的精彩瞬间吧！</p>
             </div>
         </main>
@@ -110,7 +111,7 @@ const categories = extractCategories(galleryImages);
 }
 .filter-buttons {
     display: flex;
-    gap: 0.6rem;
+    gap: 0.8rem;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -260,6 +261,14 @@ const categories = extractCategories(galleryImages);
 .gallery-end-message {
     text-align: center;
     margin-top: 3rem;
+}
+
+.gallery-end-message i {
+    font-size: 2.5rem;
+    color: var(--color-text-light);
+    display: block;
+    margin-bottom: 0.8rem;
+    opacity: 0.5;
 }
 
 .gallery-end-message p {
@@ -467,6 +476,21 @@ const categories = extractCategories(galleryImages);
         width: 36px; height: 36px;
         font-size: 20px;
     }
+}
+
+@media (max-width: 640px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 0.8rem;
+    }
+    .gallery-image-container { aspect-ratio: 1/1; }
+    .filter-btn {
+        padding: 0.4rem 0.85rem;
+        font-size: 0.72rem;
+    }
+    .gallery-info { padding: 0.75rem 0.6rem; }
+    .gallery-title { font-size: 0.82rem; }
+    .gallery-meta { font-size: 0.65rem; }
 }
 
 @media (max-width: 480px) {

@@ -136,6 +136,28 @@ const description = "了解服务器的详细信息和管理团队";
     gap: 3rem;
 }
 
+/* section 分隔装饰线 */
+.rules-section,
+.members-section,
+.contact-section {
+    position: relative;
+    padding-top: 0.5rem;
+}
+
+.rules-section::before,
+.members-section::before,
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: -1.5rem;
+    left: 15%;
+    right: 15%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-primary-light), transparent);
+    border-radius: var(--radius-full);
+    opacity: 0.6;
+}
+
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -162,9 +184,16 @@ const description = "了解服务器的详细信息和管理团队";
 }
 
 .info-card i {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--color-primary);
     margin-bottom: 1rem;
+    background: rgba(255, 142, 183, 0.12);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .info-card h3 {
@@ -262,15 +291,34 @@ const description = "了解服务器的详细信息和管理团队";
 
 .rule-card i,
 .contact-card i {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--color-primary);
     margin-bottom: 1rem;
+    background: rgba(255, 142, 183, 0.12);
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-card .btn i {
     font-size: 1rem !important;
     margin-bottom: 0;
     margin-right: 0.5rem;
+}
+
+.contact-card .btn {
+    width: 100%;
+    max-width: 220px;
+    margin-top: 0.5rem;
+    transition: all 0.35s var(--ease-spring);
+}
+
+.contact-card .btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: var(--shadow-lg);
 }
 
 /* 成员列表样式 */
@@ -382,6 +430,19 @@ const description = "了解服务器的详细信息和管理团队";
     }
 }
 
+@media (max-width: 640px) {
+    .info-card i, .rule-card i, .contact-card i {
+        width: 56px;
+        height: 56px;
+        font-size: 1.8rem;
+    }
+    .info-card h3 { font-size: 1.2rem; }
+    .rule-card h4, .contact-card h4 { font-size: 1.1rem; }
+    .section-title { font-size: 1.8rem; }
+    .members-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
+    .member-avatar { width: 56px; height: 56px; }
+}
+
 @media (max-width: 399px) {
     .page-content { gap: 1.5rem; }
     .section-title { font-size: 1.5rem; }
@@ -391,7 +452,12 @@ const description = "了解服务器的详细信息和管理团队";
     .member-card { padding: 1rem 0.5rem; min-width: 0; }
     .member-avatar { width: 48px; height: 48px; }
     .member-info h4 { font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
-    .info-card i, .rule-card i, .contact-card i { font-size: 2rem; }
-    .info-card h3 { font-size: 1.1rem; }
+    .info-card i, .rule-card i, .contact-card i {
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+    }
+    .info-card h3 { font-size: 1rem; }
+    .rule-card h4, .contact-card h4 { font-size: 1rem; }
 }
 </style>

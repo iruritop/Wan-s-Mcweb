@@ -12,6 +12,30 @@ const description = "欢迎来到我们的Minecraft服务器";
         <!-- 页面头部 -->
         <PageTitle pageTitle={websiteConfig.navigation.items.find(item => item.path === "/")?.pageTitle} />
 
+        <!-- 欢迎引导区块 -->
+        <section class="welcome-guide">
+            <div class="guide-grid">
+                <div class="guide-card">
+                    <div class="guide-icon"><i class="mdi mdi-content-copy"></i></div>
+                    <div class="guide-step">01</div>
+                    <h3>复制地址</h3>
+                    <p>点击下方「复制」按钮获取服务器 IP</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon"><i class="mdi mdi-account-multiple-plus"></i></div>
+                    <div class="guide-step">02</div>
+                    <h3>加入游戏</h3>
+                    <p>打开 PCL 启动器，导入乌托邦整合包粘贴地址即可进入</p>
+                </div>
+                <div class="guide-card">
+                    <div class="guide-icon"><i class="mdi mdi-castle"></i></div>
+                    <div class="guide-step">03</div>
+                    <h3>开始冒险</h3>
+                    <p>探索方块世界，创造属于你的乌托邦之旅</p>
+                </div>
+            </div>
+        </section>
+
         <!-- 主要内容区域 -->
         <main class="page-content">
             <!-- 服务器信息卡片 -->
@@ -339,6 +363,98 @@ document.addEventListener('DOMContentLoaded', async function() {
 </script>
 
 <style>
+/* 欢迎引导区块 */
+.welcome-guide {
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+}
+
+.guide-card {
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-backdrop);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition: all 0.35s var(--ease-spring);
+    position: relative;
+    overflow: hidden;
+}
+
+.guide-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.35s var(--ease-smooth);
+}
+
+.guide-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+.guide-card:hover::before {
+    transform: scaleX(1);
+}
+
+.guide-icon {
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+.guide-step {
+    font-family: '像素体', monospace;
+    font-size: 0.75rem;
+    color: var(--color-accent);
+    background: rgba(255, 209, 102, 0.2);
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: var(--radius-full);
+    margin-bottom: 0.5rem;
+}
+
+.guide-card h3 {
+    font-size: 1rem;
+    color: var(--color-text);
+    margin-bottom: 0.3rem;
+}
+
+.guide-card p {
+    font-size: 0.78rem;
+    color: var(--color-text-light);
+    line-height: 1.4;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .guide-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+    .guide-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-align: left;
+        padding: 1rem 1.2rem;
+    }
+    .guide-icon { font-size: 1.5rem; margin-bottom: 0; flex-shrink: 0; }
+    .guide-step { margin-bottom: 0; flex-shrink: 0; font-size: 0.65rem; padding: 0.1rem 0.4rem; }
+    .guide-card h3 { font-size: 0.9rem; white-space: nowrap; flex-shrink: 0; }
+    .guide-card p { font-size: 0.72rem; }
+}
+
 .page-content {
     display: flex;
     flex-direction: column;
@@ -466,22 +582,45 @@ document.addEventListener('DOMContentLoaded', async function() {
     align-items: center;
     gap: 1.5rem;
     text-align: left;
-    padding: 1rem;
-    background: var(--glass-bg);
+    padding: 1.5rem 1.2rem;
+    background: linear-gradient(135deg, rgba(255, 142, 183, 0.08), rgba(166, 227, 233, 0.06));
     border-radius: var(--radius-lg);
     border: 1px solid var(--glass-border);
-    transition: transform 0.3s var(--ease-smooth);
+    transition: all 0.35s var(--ease-spring);
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(255, 142, 183, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s;
 }
 
 .stat-item:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary);
+}
+
+.stat-item:hover::after {
+    opacity: 1;
 }
 
 .stat-item i {
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--color-primary);
     flex-shrink: 0;
+    background: rgba(255, 142, 183, 0.12);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .stat-info {
@@ -647,8 +786,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
-    padding: 1rem;
-    background: var(--glass-bg);
+    padding: 1.2rem 1.5rem;
+    background: linear-gradient(135deg, var(--glass-bg), var(--color-card-bg));
     border-radius: var(--radius-lg);
     border: 1px solid var(--glass-border);
 }
@@ -767,25 +906,28 @@ document.addEventListener('DOMContentLoaded', async function() {
 }
 
 .player-item {
-    background: var(--color-card-bg);
+    background: linear-gradient(135deg, var(--glass-bg), var(--color-card-bg));
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-md);
-    padding: 0.5rem;
+    padding: 0.5rem 0.7rem;
     text-align: center;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-text);
-    transition: all 0.3s var(--ease-smooth);
+    transition: all 0.3s var(--ease-spring);
     display: flex;
     align-items: center;
     gap: 0.4rem;
     justify-content: center;
 }
 .player-item::before {
-    content: '👤';
-    font-size: 0.8rem;
+    content: '';
+    display: inline-block;
+    width: 8px; height: 8px;
+    background: var(--color-success);
+    border-radius: 50%;
     flex-shrink: 0;
-}
+    box-shadow: 0 0 6px var(--color-success);
 
 .player-item:hover {
     transform: translateY(-2px);
@@ -856,6 +998,38 @@ document.addEventListener('DOMContentLoaded', async function() {
     .stat-value {
         font-size: 1.5rem;
     }
+}
+
+@media (max-width: 640px) {
+    .page-content {
+        gap: 1.5rem;
+    }
+    
+    .server-info-card {
+        padding: 1.5rem 1rem;
+    }
+    
+    .server-stats {
+        gap: 1rem;
+    }
+
+    .status-title {
+        font-size: 1.1rem;
+    }
+
+    .refresh-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .detail-label { font-size: 0.85rem; }
+    .detail-value { font-size: 0.95rem; }
+
+    .players-list {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        max-height: 120px;
+    }
+    .player-item { font-size: 0.75rem; padding: 0.35rem; }
 }
 
 @media (min-width: 1200px) {

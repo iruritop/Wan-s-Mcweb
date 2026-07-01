@@ -380,7 +380,21 @@ const updateTime = formatUpdateTime(leaderboardData.export_time);
             background: var(--glass-bg);
             backdrop-filter: var(--glass-backdrop);
             border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
             box-shadow: var(--glass-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leaderboard-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+            border-radius: var(--radius-full);
         }
 
         .leaderboard-header .count-header {
@@ -408,9 +422,20 @@ const updateTime = formatUpdateTime(leaderboardData.export_time);
             box-shadow: var(--shadow-md);
         }
 
+        /* 斑马纹 — 4名及以后的交替行 */
+        .leaderboard-item:nth-child(even):not([data-player-rank="1"]):not([data-player-rank="2"]):not([data-player-rank="3"]) {
+            background: rgba(168, 153, 255, 0.06);
+        }
+
         .leaderboard-item.total-score {
-            background: linear-gradient(135deg, rgba(255, 142, 183, 0.2), rgba(166, 227, 233, 0.2));
-            border-left: 4px solid var(--color-primary);
+            background: linear-gradient(135deg, rgba(255, 142, 183, 0.25), rgba(166, 227, 233, 0.15));
+            border-left: 5px solid var(--color-primary);
+            font-weight: 700;
+        }
+
+        .leaderboard-item.total-score .score-value {
+            font-size: 1.3rem;
+            color: var(--color-primary-dark);
         }
 
         .rank {
@@ -423,6 +448,45 @@ const updateTime = formatUpdateTime(leaderboardData.export_time);
         .rank-number {
             font-size: 1.2rem;
             color: var(--color-primary);
+        }
+
+        /* 前三名特殊样式 */
+        [data-player-rank="1"] {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+            border-left: 4px solid #ffd700;
+            position: relative;
+        }
+        [data-player-rank="1"] .rank-number {
+            color: #b8860b;
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+        [data-player-rank="1"] .rank-number::before {
+            content: '👑 ';
+        }
+
+        [data-player-rank="2"] {
+            background: linear-gradient(135deg, rgba(192, 192, 192, 0.15), rgba(192, 192, 192, 0.05));
+            border-left: 4px solid #c0c0c0;
+        }
+        [data-player-rank="2"] .rank-number {
+            color: #888;
+            font-weight: 700;
+        }
+        [data-player-rank="2"] .rank-number::before {
+            content: '🥈 ';
+        }
+
+        [data-player-rank="3"] {
+            background: linear-gradient(135deg, rgba(205, 127, 50, 0.15), rgba(205, 127, 50, 0.05));
+            border-left: 4px solid #cd7f32;
+        }
+        [data-player-rank="3"] .rank-number {
+            color: #8b6914;
+            font-weight: 700;
+        }
+        [data-player-rank="3"] .rank-number::before {
+            content: '🥉 ';
         }
 
         .rank-total {
@@ -607,6 +671,68 @@ const updateTime = formatUpdateTime(leaderboardData.export_time);
             box-shadow: var(--shadow-md);
         }
 
+        @media (max-width: 640px) {
+            .leaderboard-filters {
+                padding: 0.6rem;
+            }
+            .filter-buttons {
+                gap: 0.5rem;
+            }
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.78rem;
+                gap: 0.3rem;
+            }
+            .filter-btn .mdi {
+                font-size: 0.9rem;
+            }
+
+            .leaderboard-header,
+            .leaderboard-item {
+                grid-template-columns: 45px 1fr auto;
+                gap: 0.35rem;
+                padding: 0.55rem 0.4rem;
+            }
+            .leaderboard-header .count-header {
+                display: none;
+            }
+
+            .player-info {
+                gap: 0.35rem;
+            }
+
+            .player-avatar {
+                width: 26px;
+                height: 26px;
+                flex-shrink: 0;
+            }
+
+            .player-details {
+                min-width: 0;
+                overflow: hidden;
+            }
+            
+            .player-details h4 {
+                font-size: 0.82rem;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 120px;
+            }
+
+            .score-value {
+                font-size: 0.85rem;
+            }
+            
+            .rank-number { font-size: 0.95rem; }
+
+            .hidden-scores .leaderboard-item {
+                grid-template-columns: 45px 1fr auto;
+                gap: 0.35rem;
+                padding: 0.55rem 0.4rem;
+            }
+        }
+
         @media (max-width: 768px) {
             .leaderboard-header,
             .leaderboard-item {
@@ -659,6 +785,16 @@ const updateTime = formatUpdateTime(leaderboardData.export_time);
             
             .score-value { font-size: 0.8rem; }
             .rank-number { font-size: 0.85rem; }
+
+            .hidden-scores .leaderboard-item {
+                grid-template-columns: 40px 1fr auto;
+                padding: 0.5rem 0.35rem;
+            }
+
+            .filter-btn {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.72rem;
+            }
         }
     </style>
 </Layout>
