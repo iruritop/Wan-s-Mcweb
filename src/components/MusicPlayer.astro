@@ -17,7 +17,7 @@ import { websiteConfig } from '../config/website.config.js';
         <div class="music-handle" id="music-handle"></div>
         
         <div class="music-header">
-            <h3>🎵 乌托邦音乐盒</h3>
+            <h3>🎵 云绒沐绵音乐盒</h3>
             <button id="music-close" class="music-close" aria-label="关闭">
                 <i class="mdi mdi-close"></i>
             </button>
@@ -228,8 +228,8 @@ document.addEventListener('DOMContentLoaded', () => {
     audio.addEventListener('loadedmetadata', updateDuration);
     audio.addEventListener('timeupdate', updateProgress);
     audio.addEventListener('ended', handleSongEnd);
-    audio.addEventListener('play', () => { isPlaying = true; updatePlayButton(); });
-    audio.addEventListener('pause', () => { isPlaying = false; updatePlayButton(); });
+    audio.addEventListener('play', () => { isPlaying = true; updatePlayButton(); document.querySelector('.cover-wrap')?.classList.add('playing'); });
+    audio.addEventListener('pause', () => { isPlaying = false; updatePlayButton(); document.querySelector('.cover-wrap')?.classList.remove('playing'); });
     
     const toggle = document.getElementById('music-toggle');
     const panel = document.getElementById('music-panel');
@@ -363,12 +363,20 @@ document.addEventListener('DOMContentLoaded', () => {
     display: flex; align-items: center; gap: 0.9rem; margin-bottom: 0.9rem;
 }
 .cover-wrap { position: relative; flex-shrink: 0; }
+.cover-wrap::after {
+    content: ''; position: absolute; inset: -4px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    opacity: 0; z-index: -1; transition: opacity 0.4s;
+    filter: blur(8px);
+}
+.cover-wrap.playing::after { opacity: 0.5; }
 .song-cover {
     width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
     box-shadow: var(--shadow-md); border: 2px solid var(--glass-border);
-    transition: transform 0.4s var(--ease-smooth);
+    transition: all 0.4s var(--ease-smooth);
 }
-.cover-wrap:hover .song-cover { transform: scale(1.05); }
+.cover-wrap:hover .song-cover { transform: scale(1.08); }
+.cover-wrap.playing .song-cover { box-shadow: 0 0 20px rgba(255,142,183,0.3); }
 .now-info { flex: 1; min-width: 0; }
 .song-title {
     font-size: 0.95rem; font-weight: 700; color: var(--color-text);
@@ -464,8 +472,13 @@ document.addEventListener('DOMContentLoaded', () => {
 @media (min-width: 640px) and (max-width: 1024px) {
     .music-player { bottom: 1.5rem; right: 1.5rem; }
     .music-toggle { width: 50px; height: 50px; font-size: 1.25rem; }
-    .music-panel { width: 330px; max-height: 500px; bottom: 62px; }
-    .song-cover { width: 54px; height: 54px; }
+    .music-panel { width: 340px; max-height: 520px; bottom: 62px; }
+    .music-header { padding: 0.8rem 1.1rem; }
+    .music-content { padding: 0.9rem 1.1rem; }
+    .song-cover { width: 56px; height: 56px; }
+    .song-title { font-size: 0.9rem; }
+    .ctrl-btn.ctrl-play { width: 38px; height: 38px; font-size: 1.1rem; }
+    .playlist { max-height: 160px; }
 }
 
 /* ======== 手机：底部抽屉 ======== */
@@ -474,21 +487,25 @@ document.addEventListener('DOMContentLoaded', () => {
     .music-player { bottom: 1rem; right: 1rem; }
     .music-toggle { width: 48px; height: 48px; font-size: 1.2rem; }
     .music-panel {
-        position: fixed; bottom: 0; left: 0; right: 0; width: 100%; max-height: 60vh;
+        position: fixed; bottom: 0; left: 0; right: 0; width: 100%; max-height: 62vh;
         border-radius: var(--radius-lg) var(--radius-lg) 0 0;
         transform: translateY(100%); opacity: 1; visibility: visible;
-        box-shadow: 0 -8px 32px rgba(0,0,0,0.2);
+        box-shadow: 0 -8px 40px rgba(0,0,0,0.25);
     }
     .music-panel.active { transform: translateY(0); }
     .music-handle {
-        display: block; width: 32px; height: 4px; background: var(--color-border);
-        border-radius: 2px; margin: 8px auto 0; flex-shrink: 0;
+        display: block; width: 36px; height: 5px; background: var(--color-border);
+        border-radius: 3px; margin: 10px auto 0; flex-shrink: 0;
     }
-    .music-header { padding: 0.7rem 1rem; }
-    .music-content { padding: 0.7rem 1rem; }
-    .song-cover { width: 52px; height: 52px; }
-    .ctrl-btn.ctrl-play { width: 36px; height: 36px; font-size: 1.1rem; }
-    .playlist { max-height: 140px; }
+    .music-header { padding: 0.75rem 1.1rem; }
+    .music-header h3 { font-size: 0.95rem; }
+    .music-content { padding: 0.75rem 1.1rem; }
+    .song-cover { width: 54px; height: 54px; }
+    .song-title { font-size: 0.9rem; }
+    .ctrl-btn { padding: 0.45rem; font-size: 1rem; }
+    .ctrl-btn.ctrl-play { width: 38px; height: 38px; font-size: 1.15rem; }
+    .volume-bar { width: 45px; }
+    .playlist { max-height: 150px; }
 }
 
 /* ======== 小平手机 ======== */
