@@ -205,8 +205,9 @@ document.addEventListener('DOMContentLoaded', async function() {
             serverStatusDot.style.animation = 'none';
         }
         if (serverIcon) {
-            serverIcon.src = '';
-            serverIcon.style.display = 'none';
+            serverIcon.src = '/assets/load/Obsidian.png';
+            serverIcon.style.display = 'block';
+            serverIcon.style.opacity = '0.4';
         }
         if (versionDisplay) versionDisplay.textContent = '—';
         if (playersDisplay) playersDisplay.textContent = '0/?';
@@ -227,6 +228,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             if (serverIcon && data.icon) {
                 serverIcon.src = data.icon;
                 serverIcon.style.display = 'block';
+                serverIcon.style.opacity = '1';
                 serverIcon.alt = '服务器图标';
             }
             
@@ -323,8 +325,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     console.log('开始获取服务器状态...');
     await fetchServerStatus();
     
-    // 每30秒更新一次状态
-    setInterval(fetchServerStatus, 30000);
+    // 每60秒更新一次状态
+    setInterval(fetchServerStatus, 60000);
     console.log('定时器已设置，每30秒更新一次');
 });
 </script>
@@ -767,6 +769,15 @@ document.addEventListener('DOMContentLoaded', async function() {
     font-weight: 600;
     color: var(--color-text);
     transition: all 0.3s var(--ease-smooth);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    justify-content: center;
+}
+.player-item::before {
+    content: '👤';
+    font-size: 0.8rem;
+    flex-shrink: 0;
 }
 
 .player-item:hover {
@@ -858,7 +869,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 @media (max-width: 399px) {
     .server-info-card { padding: 1.5rem 1rem; }
     .server-status-card { padding: 1.5rem 1rem; }
-    #serverAddress { font-size: 1rem; padding: 0.6rem; }
+    #serverAddress { font-size: 1rem; padding: 0.5rem 0.8rem; min-width: auto; width: 100%; }
     .stat-value { font-size: 1.2rem; }
     .players-list { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); max-height: 120px; }
     .player-item { font-size: 0.75rem; padding: 0.3rem; }

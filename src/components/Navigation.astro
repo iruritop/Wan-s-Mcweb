@@ -194,14 +194,18 @@ document.addEventListener('astro:page-load', updateNavHighlight);
     border-radius: var(--radius-full);
     cursor: pointer;
     color: var(--color-text);
-    transition: all 0.3s var(--ease-smooth);
+    transition: all 0.4s var(--ease-spring);
     position: relative;
     overflow: hidden;
 }
 
 .theme-toggle:hover {
     background: var(--glass-bg);
-    transform: scale(1.1);
+    transform: rotate(30deg) scale(1.15);
+}
+
+.theme-toggle:active {
+    transform: rotate(180deg) scale(0.9);
 }
 
 .theme-icon-light,
