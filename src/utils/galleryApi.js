@@ -167,8 +167,8 @@ export async function getGalleryData(galleryConfig) {
  * @returns {Array} 分类数组
  */
 export function extractCategories(galleryData) {
-  const categories = ['全部'];
-  const categorySet = new Set();
+  const categories = ['全部', '小窝'];
+  const categorySet = new Set(['小窝']);
   
   galleryData.forEach(item => {
     if (item.category && !categorySet.has(item.category)) {
