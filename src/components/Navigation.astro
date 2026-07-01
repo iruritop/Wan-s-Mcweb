@@ -241,6 +241,8 @@ document.addEventListener('astro:page-load', updateNavHighlight);
         height: 55px;
     }
     
+    .logo-text { font-size: 1.1rem; }
+    
     .mobile-menu-toggle {
         display: block;
     }
@@ -250,8 +252,8 @@ document.addEventListener('astro:page-load', updateNavHighlight);
         top: 100%;
         right: 0.5rem;
         width: 50%;
-        min-width: 200px;
-        max-width: 300px;
+        min-width: 180px;
+        max-width: 280px;
         background: var(--color-card-bg);
         backdrop-filter: blur(20px) saturate(180%);
         border: 1px solid var(--glass-border);
@@ -279,5 +281,15 @@ document.addEventListener('astro:page-load', updateNavHighlight);
         justify-content: center;
         padding: 1rem;
     }
+}
+
+/* 小平手机 */
+@media (max-width: 399px) {
+    .navbar { width: calc(100% - 1rem); top: 0.5rem; }
+    .navbar-container { padding: 0 0.75rem; height: 48px; }
+    .logo-text { font-size: 0.95rem; }
+    .logo-icon { font-size: 1.5rem; }
+    .navbar-menu { min-width: 160px; right: 0; }
+    .nav-link { padding: 0.75rem 1rem; font-size: 0.85rem; }
 }
 </style>

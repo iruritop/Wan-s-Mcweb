@@ -189,13 +189,29 @@ const safePageTitle = pageTitle || {
   }
 
   @media (max-width: 480px) {
+    .page-header {
+      margin-top: 1rem;
+      margin-bottom: 2.5rem;
+      padding: 1rem 0;
+    }
     .page-title {
-      font-size: 2rem;
-      min-height: 3rem;
+      font-size: 1.55rem;
+      min-height: 2.5rem;
     }
     
     .page-subtitle {
-      font-size: 1rem;
+      font-size: 0.85rem;
+      padding: 0 0.5rem;
+    }
+  }
+
+  /* 小平手机 <370px */
+  @media (max-width: 369px) {
+    .page-title {
+      font-size: 1.3rem;
+    }
+    .page-subtitle {
+      font-size: 0.78rem;
     }
   }
 </style>
