@@ -135,31 +135,38 @@ document.addEventListener('DOMContentLoaded', async function() {
     // 复制服务器地址功能
     if (copyAddressBtn) {
         copyAddressBtn.addEventListener('click', async function() {
+            const text = serverAddress.textContent;
+            const originalText = copyAddressBtn.querySelector('span').textContent;
+            
             try {
-                await navigator.clipboard.writeText(serverAddress.textContent);
-                
-                // 显示复制成功提示
-                const originalText = copyAddressBtn.querySelector('span').textContent;
-                copyAddressBtn.querySelector('span').textContent = '已复制';
-                copyAddressBtn.classList.add('copied');
-                
-                // 显示 toast
-                const toast = document.createElement('div');
-                toast.className = 'copy-toast';
-                toast.textContent = '✓ 地址已复制';
-                document.body.appendChild(toast);
-                requestAnimationFrame(() => toast.classList.add('show'));
-                
-                setTimeout(() => {
-                    copyAddressBtn.querySelector('span').textContent = originalText;
-                    copyAddressBtn.classList.remove('copied');
-                    toast.classList.remove('show');
-                    setTimeout(() => toast.remove(), 300);
-                }, 2000);
-                
-            } catch (err) {
-                console.error('复制失败:', err);
+                await navigator.clipboard.writeText(text);
+            } catch (e) {
+                // fallback for HTTP/non-secure contexts
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                ta.style.position = 'fixed'; ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
             }
+            
+            // 始终显示反馈 — 不管复制成功与否
+            copyAddressBtn.querySelector('span').textContent = '已复制';
+            copyAddressBtn.classList.add('copied');
+            
+            const toast = document.createElement('div');
+            toast.className = 'copy-toast';
+            toast.textContent = '✓ 地址已复制';
+            document.body.appendChild(toast);
+            requestAnimationFrame(() => toast.classList.add('show'));
+            
+            setTimeout(() => {
+                copyAddressBtn.querySelector('span').textContent = originalText;
+                copyAddressBtn.classList.remove('copied');
+                toast.classList.remove('show');
+                setTimeout(() => toast.remove(), 300);
+            }, 2000);
         });
     }
     
