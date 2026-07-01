@@ -387,9 +387,10 @@ const description = "了解服务器的详细信息和管理团队";
     .section-title { font-size: 1.5rem; }
     .card { padding: 1rem; }
     .team-member { font-size: 0.85rem; }
-    .members-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .member-avatar { width: 56px; height: 56px; }
-    .member-info h4 { font-size: 0.85rem; }
+    .members-grid { grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+    .member-card { padding: 1rem 0.5rem; min-width: 0; }
+    .member-avatar { width: 48px; height: 48px; }
+    .member-info h4 { font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
     .info-card i, .rule-card i, .contact-card i { font-size: 2rem; }
     .info-card h3 { font-size: 1.1rem; }
 }
