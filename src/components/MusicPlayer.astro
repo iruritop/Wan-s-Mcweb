@@ -316,8 +316,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <style>
 /* ======== 基础 ======== */
 .music-player { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; }
-.music-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 998; opacity: 0; transition: opacity 0.3s; }
-.music-overlay.active { opacity: 1; }
+.music-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 998; opacity: 0; pointer-events: none; transition: opacity 0.3s; }
+.music-overlay.active { opacity: 1; pointer-events: auto; }
 
 .music-toggle {
     width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
