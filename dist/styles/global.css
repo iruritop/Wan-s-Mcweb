@@ -12,6 +12,8 @@
 :root {
   /* 日间模式颜色 - 奶油白风格 */
   --color-primary: #ff8eb7;     /* 樱花粉 */
+  --color-primary-dark: #e8739a; /* 深樱花粉 */
+  --color-primary-light: #ffb8d2; /* 浅樱花粉 */
   --color-secondary: #a6e3e9;   /* 薄荷蓝 */
   --color-accent: #ffd166;      /* 奶油黄 */
   --color-success: #7befb2;     /* 清新绿 */
