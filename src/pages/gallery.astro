@@ -102,148 +102,158 @@ const categories = extractCategories(galleryImages);
     gap: 3rem;
 }
 
-/* 分类筛选样式 */
+/* 分类筛选 */
 .gallery-filters {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
 }
-
 .filter-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 0.6rem;
     flex-wrap: wrap;
     justify-content: center;
 }
-
 .filter-btn {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-full);
-    padding: 0.75rem 1.5rem;
+    padding: 0.6rem 1.3rem;
     color: var(--color-text);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s var(--ease-smooth);
+    transition: all 0.3s var(--ease-spring);
+    backdrop-filter: blur(10px);
 }
-
-.filter-btn:hover,
+.filter-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
 .filter-btn.active {
-    background: var(--color-primary);
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
     color: white;
+    border-color: transparent;
     transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-lg);
 }
 
-/* 相册网格样式 */
+/* 相册瀑布流网格 */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 1.8rem;
 }
-
 .gallery-item {
     background: var(--color-card-bg);
+    backdrop-filter: var(--glass-backdrop);
     border-radius: var(--radius-lg);
     overflow: hidden;
-    transition: all 0.3s var(--ease-smooth);
     border: 1px solid var(--glass-border);
+    transition: all 0.4s var(--ease-smooth);
+    display: flex;
+    flex-direction: column;
 }
-
 .gallery-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
     box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
 }
 
+/* 图片容器 — 自适应高度 */
 .gallery-image-container {
     position: relative;
     width: 100%;
-    height: 200px;
     overflow: hidden;
+    aspect-ratio: 4/3;
+    background: var(--glass-bg);
 }
-
 .gallery-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s var(--ease-smooth);
+    transition: transform 0.6s var(--ease-smooth), filter 0.6s;
+    filter: brightness(0.95);
 }
-
 .gallery-item:hover .gallery-image {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    filter: brightness(1.05);
 }
 
+/* 悬浮遮罩 — 渐变+描述 */
 .gallery-overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.15) 50%, transparent 100%);
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
+    padding: 1.2rem;
     opacity: 0;
-    transition: opacity 0.3s var(--ease-smooth);
+    transition: opacity 0.35s var(--ease-smooth);
 }
-
-.gallery-item:hover .gallery-overlay {
-    opacity: 1;
-}
-
+.gallery-item:hover .gallery-overlay { opacity: 1; }
 .view-btn {
     background: var(--color-primary);
     color: white;
     border: none;
     border-radius: var(--radius-full);
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s var(--ease-smooth);
+    transition: all 0.3s var(--ease-spring);
+    transform: translateY(10px);
 }
-
+.gallery-item:hover .view-btn { transform: translateY(0); }
 .view-btn:hover {
-    background: var(--color-primary-dark);
-    transform: scale(1.1);
+    background: var(--color-accent);
+    transform: scale(1.08) !important;
+    box-shadow: var(--shadow-md);
 }
 
-/* 相册信息样式 */
+/* 信息区 */
 .gallery-info {
-    padding: 1.5rem;
+    padding: 1.2rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
 }
-
 .gallery-title {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--color-text);
-    margin-bottom: 0.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
 .gallery-description {
     color: var(--color-text-light);
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin-bottom: 1rem;
+    font-size: 0.82rem;
+    line-height: 1.45;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
-
 .gallery-meta {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
+    padding-top: 0.35rem;
+    border-top: 1px solid var(--glass-border);
+    margin-top: auto;
 }
-
 .gallery-category {
-    background: var(--color-primary-light);
-    color: var(--color-primary);
-    padding: 0.25rem 0.75rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    color: white;
+    padding: 0.2rem 0.65rem;
     border-radius: var(--radius-full);
     font-weight: 600;
+    font-size: 0.72rem;
 }
-
 .gallery-date {
     color: var(--color-text-light);
+    font-size: 0.72rem;
 }
 
 /* 提示信息样式 */
@@ -431,84 +441,60 @@ const categories = extractCategories(galleryImages);
 /* 响应式设计 */
 @media (max-width: 768px) {
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.2rem;
     }
-    
-    .filter-buttons {
-        gap: 0.5rem;
-    }
-    
+    .filter-buttons { gap: 0.4rem; }
     .filter-btn {
         padding: 0.5rem 1rem;
-        font-size: 0.8rem;
+        font-size: 0.78rem;
     }
-    
-    .gallery-info {
-        padding: 1rem;
-    }
-    
-    /* 移动端模态框优化 */
+    .gallery-info { padding: 1rem 0.85rem; }
+    .gallery-title { font-size: 0.95rem; }
     .modal-content {
         width: 95%;
         max-width: 95%;
         max-height: 90%;
         gap: 0.5rem;
     }
-    
-    .modal-image-container {
-        max-height: 50vh;
-    }
-    
-    .modal-info {
-        padding: 1rem;
-        max-width: 100%;
-    }
-    
-    .modal-info h3 {
-        font-size: 1.2rem;
-    }
-    
-    .modal-info p {
-        font-size: 0.9rem;
-    }
-    
+    .modal-image-container { max-height: 50vh; }
+    .modal-info { padding: 1rem; max-width: 100%; }
+    .modal-info h3 { font-size: 1.2rem; }
+    .modal-info p { font-size: 0.9rem; }
     .close-modal {
-        top: 10px;
-        right: 10px;
-        width: 36px;
-        height: 36px;
+        top: 10px; right: 10px;
+        width: 36px; height: 36px;
         font-size: 20px;
     }
 }
 
 @media (max-width: 480px) {
     .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+    }
+    .gallery-image-container { aspect-ratio: 1/1; }
+    .gallery-info { padding: 0.75rem 0.65rem; }
+    .gallery-title { font-size: 0.8rem; }
+    .gallery-description { font-size: 0.7rem; -webkit-line-clamp: 1; }
+    .gallery-meta { font-size: 0.65rem; }
+    .gallery-category { font-size: 0.65rem; padding: 0.15rem 0.5rem; }
+    .modal-content { width: 98%; max-width: 98%; }
+    .modal-image-container { max-height: 45vh; }
+    .modal-info { padding: 0.75rem; }
+    .modal-info h3 { font-size: 1.1rem; margin-bottom: 0.5rem; }
+    .modal-info p { font-size: 0.85rem; margin: 0.5rem 0; }
+}
+
+@media (max-width: 399px) {
+    .gallery-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
-    
-    .modal-content {
-        width: 98%;
-        max-width: 98%;
-    }
-    
-    .modal-image-container {
-        max-height: 45vh;
-    }
-    
-    .modal-info {
-        padding: 0.75rem;
-    }
-    
-    .modal-info h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    .modal-info p {
-        font-size: 0.85rem;
-        margin: 0.5rem 0;
-    }
+    .gallery-image-container { aspect-ratio: 16/10; }
+    .gallery-info { padding: 0.85rem; }
+    .gallery-title { font-size: 0.9rem; }
+    .gallery-description { font-size: 0.75rem; -webkit-line-clamp: 2; }
 }
 </style>
 
