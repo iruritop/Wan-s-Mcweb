@@ -55,10 +55,10 @@ const categories = extractCategories(galleryImages);
                             </div>
                         </div>
                         <div class="gallery-info">
-                            <h3 class="gallery-title">{image.description}</h3>
+                            <h3 class="gallery-title">{image.description.includes('_') ? image.description.replace(/^[^_]+_/, '') : image.description}</h3>
                             <p class="gallery-description">{image.date}</p>
                             <div class="gallery-meta">
-                                <span class="gallery-category">{image.category}</span>
+                                <span class="gallery-category">{image.description.split('_')[0]}</span>
                                 <span class="gallery-date">{image.date}</span>
                             </div>
                         </div>
@@ -251,6 +251,18 @@ const categories = extractCategories(galleryImages);
     border-radius: var(--radius-full);
     font-weight: 600;
     font-size: 0.72rem;
+    max-width: 140px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+}
+.gallery-category::before {
+    content: '作者: ';
+    font-size: 0.7rem;
+    flex-shrink: 0;
 }
 .gallery-date {
     color: var(--color-text-light);
@@ -491,6 +503,7 @@ const categories = extractCategories(galleryImages);
     .gallery-info { padding: 0.75rem 0.6rem; }
     .gallery-title { font-size: 0.82rem; }
     .gallery-meta { font-size: 0.65rem; }
+    .gallery-category { max-width: 90px; font-size: 0.65rem; }
 }
 
 @media (max-width: 480px) {
@@ -517,6 +530,7 @@ const categories = extractCategories(galleryImages);
         gap: 1rem;
     }
     .gallery-image-container { aspect-ratio: 16/10; }
+    .gallery-category { max-width: 70px; font-size: 0.6rem; padding: 0.1rem 0.4rem; }
     .gallery-info { padding: 0.85rem; }
     .gallery-title { font-size: 0.9rem; }
     .gallery-description { font-size: 0.75rem; -webkit-line-clamp: 2; }
@@ -529,48 +543,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const galleryItems = document.querySelectorAll('.gallery-item') as NodeListOf<HTMLElement>;
     
-    console.log('相册筛选功能初始化');
-    console.log('筛选按钮数量:', filterButtons.length);
-    console.log('相册项目数量:', galleryItems.length);
     
     // 分类筛选功能
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
-            console.log('点击分类按钮:', this.textContent);
             
             // 移除所有按钮的active类
             filterButtons.forEach(btn => {
                 btn.classList.remove('active');
-                console.log('移除active类:', btn.textContent);
             });
             
             // 添加当前按钮的active类
             this.classList.add('active');
-            console.log('添加active类:', this.textContent);
             
             const category = this.dataset.category;
-            console.log('筛选分类:', category);
             
             // 筛选相册项目
             galleryItems.forEach(item => {
                 const itemCategory = item.dataset.category;
-                console.log('项目分类:', itemCategory, '匹配:', category === '全部' || itemCategory === category);
                 
                 if (category === '全部' || itemCategory === category) {
                     item.style.display = 'block';
-                    console.log('显示项目:', itemCategory);
                 } else {
                     item.style.display = 'none';
-                    console.log('隐藏项目:', itemCategory);
                 }
             });
             
-            console.log('筛选完成');
         });
     });
     
     // 初始显示所有项目并激活"全部"按钮
-    console.log('初始显示所有相册项目');
     galleryItems.forEach(item => {
         item.style.display = 'block';
     });
@@ -579,7 +581,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const allButton = Array.from(filterButtons).find(btn => btn.dataset.category === '全部');
     if (allButton) {
         allButton.classList.add('active');
-        console.log('设置"全部"按钮为激活状态');
     }
     
     // 初始化大图查看功能

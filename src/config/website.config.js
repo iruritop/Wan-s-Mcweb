@@ -399,7 +399,7 @@ export const websiteConfig = {
           subtitle: "乐子乌托邦atm9",
           icon: "qqchat",
           buttonText: "加入 QQ 群",
-          buttonType: "secondary",
+          buttonType: "primary",
           url: "https://qm.qq.com/q/E2cRPx3YFc"
         },
         {
@@ -407,7 +407,7 @@ export const websiteConfig = {
           subtitle: "发送邮件联系我们",
           icon: "email",
           buttonText: "发送邮件",
-          buttonType: "secondary",
+          buttonType: "primary",
           url: "mailto:3169563787@qq.com"
         }
       ]

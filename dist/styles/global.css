@@ -27,6 +27,8 @@
   --color-text-light: #887aaa;
   --color-text-secondary: #887aaa;  /* 别名，兼容引用 */
   --color-background: var(--color-bg);  /* 别名，兼容引用 */
+  --color-card: var(--color-card-bg);  /* 别名，兼容 history/gallery */
+  --text-secondary: var(--color-text-light);  /* 别名，兼容 leaderboard */
   --color-border: rgba(168, 153, 255, 0.2);
 
   /* RGB 值供 rgba() 使用 */
@@ -69,6 +71,8 @@
   --color-text: #cdd6f4;        /* 浅色文字 */
   --color-text-light: #a6adc8;
   --color-text-secondary: #a6adc8;
+  --color-card: var(--color-card-bg);
+  --text-secondary: var(--color-text-light);
   --color-background: var(--color-bg);
   --color-border: rgba(108, 112, 134, 0.3);
 
@@ -244,8 +248,8 @@ body {
   }
 }
 
-/* 手机 (< 768px) */
-@media (max-width: 767px) {
+/* 手机 (< 640px) */
+@media (max-width: 639px) {
   .page-container {
     padding: 0.75rem;
   }
@@ -315,4 +319,42 @@ body {
 ::-moz-selection {
   background: var(--color-primary);
   color: white;
+}
+
+/* ===== 在线玩家头像（JS 动态生成，必须全局样式） ===== */
+.player-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--glass-bg), var(--color-card-bg));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    padding: 0.4rem 0.6rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+.player-face {
+    width: 22px; height: 22px;
+    border-radius: 22px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--color-primary);
+    background: var(--glass-bg);
+}
+.player-name {
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
+}
+@media (max-width: 768px) {
+    .player-face { width: 18px; height: 18px; border-radius: 18px; }
+    .player-name { font-size: 0.78rem; }
+}
+@media (max-width: 399px) {
+    .player-face { width: 16px; height: 16px; border-radius: 16px; }
+    .player-name { font-size: 0.72rem; }
 }

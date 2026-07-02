@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import { websiteConfig } from '../config/website.config.js';
 import Navigation from '../components/Navigation.astro';
 import MusicPlayer from '../components/MusicPlayer.astro';
@@ -21,16 +20,13 @@ const { title, description } = Astro.props;
     
     <title>{title ? `${title} - ${websiteConfig.site.title}` : websiteConfig.site.title}</title>
 
-    <!-- 页面过渡动画 -->
-    <ViewTransitions />
-
     <!-- 预加载字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     
-    <!-- 图标库 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+    <!-- 图标库 — 本地自托管 -->
+    <link rel="stylesheet" href="/styles/mdi.css">
     
     <!-- 样式 -->
     <link rel="stylesheet" href="/styles/global.css" />
@@ -84,58 +80,23 @@ const { title, description } = Astro.props;
 
     <!-- 主题脚本 -->
     <script>
-        // 初始化主题
         (function() {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            
-            // 从数据属性获取背景图片配置
-            const bgContainer = document.querySelector('.background-container');
-            const bgImages = bgContainer ? JSON.parse(bgContainer.dataset.bgImages || '[]') : [];
-            
-            // 随机选择一张背景图片
-            function initializeRandomBackground() {
-                const backgroundImage = document.getElementById('background-image');
-                if (bgImages.length > 0 && backgroundImage) {
-                    // 随机选择一张图片
-                    const randomIndex = Math.floor(Math.random() * bgImages.length);
-                    const randomImage = bgImages[randomIndex];
-                    
-                    // 设置背景图片
-                    backgroundImage.style.backgroundImage = `url(${randomImage})`;
-                    
-                    // 显示背景
-                    setTimeout(() => {
-                        backgroundImage.classList.add('active');
-                    }, 100);
-                }
-            }
-            
-            // 初始化背景
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initializeRandomBackground);
-            } else {
-                initializeRandomBackground();
-            }
-            
-            // 导航栏自动隐藏
-            
-            // 导航栏自动隐藏
-            let lastScrollTop = 0;
-            const navbar = document.getElementById('navbar');
-            
-            window.addEventListener('scroll', () => {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // 向下滚动，隐藏导航栏
-                    navbar?.classList.add('hidden');
-                } else if (scrollTop < lastScrollTop && scrollTop < 50) {
-                    // 向上滚动到顶部附近，显示导航栏
-                    navbar?.classList.remove('hidden');
-                }
-                
-                lastScrollTop = scrollTop;
+            var t = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
+            var last = 0, nav = document.getElementById('navbar');
+            window.addEventListener('scroll', function() {
+                var s = window.pageYOffset || document.documentElement.scrollTop;
+                if (s > last && s > 100) nav && nav.classList.add('hidden');
+                else if (s < last && s < 50) nav && nav.classList.remove('hidden');
+                last = s;
+            });
+            // 主题切换
+            var toggle = document.getElementById('theme-toggle');
+            if (toggle) toggle.addEventListener('click', function() {
+                var cur = document.documentElement.getAttribute('data-theme');
+                var next = cur === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', next);
+                localStorage.setItem('theme', next);
             });
         })();
     </script>
@@ -160,9 +121,9 @@ const { title, description } = Astro.props;
     <Navigation />
     
     <!-- 主内容区域 -->
-    <main class="main-content">
+    <div class="main-content">
         <slot />
-    </main>
+    </div>
     
     <!-- 一键到顶按钮 -->
     <BackToTop />
@@ -178,5 +139,18 @@ const { title, description } = Astro.props;
     <script is:inline src="/scripts/theme.js"></script>
     <script is:inline src="/scripts/navigation.js"></script>
     <script is:inline src="/scripts/loading.js"></script>
+
+    <!-- 背景随机化 — DOM 就绪后执行 -->
+    <script>
+        (function() {
+            var c = document.querySelector('.background-container');
+            var imgs = c ? JSON.parse(c.dataset.bgImages || '[]') : [];
+            var bg = document.getElementById('background-image');
+            if (imgs.length && bg) {
+                bg.style.backgroundImage = 'url(' + imgs[Math.floor(Math.random() * imgs.length)] + ')';
+                requestAnimationFrame(function() { bg.classList.add('active'); });
+            }
+        })();
+    </script>
 </body>
 </html>

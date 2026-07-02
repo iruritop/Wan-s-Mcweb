@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Material Design Icons";
+  src: url("/fonts/mdi.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.mdi::before,
+.mdi-set::before {
+  display: inline-block;
+  font: normal normal normal 24px/1 "Material Design Icons";
+  font-size: inherit;
+  text-rendering: auto;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.mdi-access-point::before { content: "\F0003"; }
+.mdi-account::before { content: "\F0004"; }
+.mdi-account-group::before { content: "\F0009"; }
+.mdi-account-multiple-plus::before { content: "\F0011"; }
+.mdi-castle::before { content: "\F0188"; }
+.mdi-chart-bar::before { content: "\F01A1"; }
+.mdi-chevron-down::before { content: "\F01A3"; }
+.mdi-chevron-left::before { content: "\F01A4"; }
+.mdi-chevron-right::before { content: "\F01A5"; }
+.mdi-chevron-up::before { content: "\F01A6"; }
+.mdi-close::before { content: "\F01D4"; }
+.mdi-content-copy::before { content: "\F01E7"; }
+.mdi-cube::before { content: "\F0201"; }
+.mdi-emoticon-sad-outline::before { content: "\F0263"; }
+.mdi-eye::before { content: "\F028D"; }
+.mdi-history::before { content: "\F03B4"; }
+.mdi-home::before { content: "\F03C1"; }
+.mdi-image::before { content: "\F03D0"; }
+.mdi-information::before { content: "\F03FE"; }
+.mdi-magnify::before { content: "\F0459"; }
+.mdi-medal::before { content: "\F0465"; }
+.mdi-menu::before { content: "\F0481"; }
+.mdi-music::before { content: "\F04E2"; }
+.mdi-network::before { content: "\F04F8"; }
+.mdi-open-in-new::before { content: "\F0515"; }
+.mdi-pause::before { content: "\F0534"; }
+.mdi-play::before { content: "\F055A"; }
+.mdi-refresh::before { content: "\F058A"; }
+.mdi-server::before { content: "\F05EC"; }
+.mdi-skip-next::before { content: "\F0617"; }
+.mdi-skip-previous::before { content: "\F0618"; }
+.mdi-star::before { content: "\F064A"; }
+.mdi-trophy::before { content: "\F0699"; }
+.mdi-trophy-outline::before { content: "\F069A"; }
+.mdi-update::before { content: "\F06A1"; }
+.mdi-volume-high::before { content: "\F06B0"; }
+.mdi-volume-medium::before { content: "\F06B2"; }
+.mdi-volume-off::before { content: "\F06B4"; }
+.mdi-weather-night::before { content: "\F06CC"; }
+.mdi-white-balance-sunny::before { content: "\F06D9"; }

@@ -130,12 +130,7 @@ const description = "欢迎来到我们的Minecraft服务器";
 
 <script define:vars={{ apiEndpoint: websiteConfig.server.apiEndpoint, apiAddress: websiteConfig.server.apiAddress, port: websiteConfig.server.port }}>
 // 服务器状态API调用
-console.log('脚本开始执行...');
-console.log('配置参数:', {apiEndpoint, apiAddress, port});
-
 document.addEventListener('DOMContentLoaded', async function() {
-    console.log('DOM已加载，开始初始化...');
-    
     // 获取所有DOM元素
     const onlinePlayersEl = document.getElementById('onlinePlayers');
     const copyAddressBtn = document.getElementById('copyAddressBtn');
@@ -149,7 +144,6 @@ document.addEventListener('DOMContentLoaded', async function() {
     const motdDisplay = document.getElementById('motdDisplay');
     const playersList = document.getElementById('playersList');
     
-    console.log('DOM元素:', {onlinePlayersEl, copyAddressBtn, serverAddress, refreshStatusBtn});
     
     if (!onlinePlayersEl) {
         console.error('找不到onlinePlayers元素');
@@ -277,20 +271,15 @@ document.addEventListener('DOMContentLoaded', async function() {
             // 更新在线玩家列表（过滤掉Anonymous Player）
             if (playersList) {
                 const players = data.players?.list || [];
-                // 过滤掉匿名玩家和假人
-                const realPlayers = players.filter(player => 
-                    player.name_clean && 
-                    player.name_clean !== 'Anonymous Player' && 
-                    !player.name_clean.toLowerCase().includes('anonymous')
-                );
                 
-                if (realPlayers.length > 0) {
-                    const playerItems = realPlayers.map(player => 
-                        `<div class="player-item">${player.name_clean}</div>`
+                if (players.length > 0) {
+                    const playerItems = players.map(player => 
+                        `<div class="player-item">
+                            <img src="https://crafthead.net/avatar/${encodeURIComponent(player.name_clean)}" alt="" class="player-face" loading="lazy" onerror="this.style.display='none'">
+                            <span class="player-name">${player.name_clean}</span>
+                        </div>`
                     ).join('');
-                    playersList.innerHTML = playerItems;
-                } else {
-                    playersList.innerHTML = '<div class="no-players">服务器暂无玩家在线(在线列表不显示假人)</div>';
+                    playersList.innerHTML = playerItems || '<div class="no-players">服务器暂无玩家在线(在线列表不显示假人)</div>';
                 }
             }
         } else {
@@ -302,63 +291,63 @@ document.addEventListener('DOMContentLoaded', async function() {
     async function fetchServerStatus() {
         setLoadingState();
         
+        const OPANEL = 'https://opanel.coul.top:16666/open-api/players';
+        const TOKEN = 'o-HRvF6bJrE3iuCtcGcl7uF4fZKHHGNJl38qOFZHZR8FmNRRWm';
+        let data = null;
+        
+        // 优先 OPanel
         try {
-            const statusUrl = `https://mcapi.us/server/status?ip=${apiAddress}&port=${port}`;
-            console.log('API请求URL:', statusUrl);
-            
-            const response = await fetch(statusUrl, {
-                headers: { 'Accept': 'application/json' }
-            });
-            
-            console.log('API响应状态:', response.status, response.statusText);
-            
-            if (!response.ok) {
-                throw new Error(`API响应异常: ${response.status} ${response.statusText}`);
+            const res = await fetch(OPANEL, { headers: { 'Authorization': 'Bearer ' + TOKEN }, signal: AbortSignal.timeout(5000) });
+            if (res.ok) {
+                const raw = await res.json();
+                const online = (raw.players || []).filter(p => p.isOnline).map(p => ({ name_clean: p.name }));
+                data = {
+                    online: true,
+                    players: { online: online.length, max: 15, list: online },
+                    version: { name_clean: '1.20.1' },
+                    motd: { clean: '乌托邦探险之旅' },
+                    icon: null
+                };
             }
-            
-            const raw = await response.json();
-            console.log('API原始数据:', raw);
-            
-            // mcapi.us → mcstatus.io 格式转换
-            const data = {
-                online: raw.online || false,
-                players: {
-                    online: raw.players?.now || 0,
-                    max: raw.players?.max || '?',
-                    list: (raw.players?.sample || []).map(p => ({ name_clean: p.name }))
-                },
-                version: { name_clean: raw.server?.name || '—' },
-                motd: { clean: raw.motd || '—' },
-                icon: raw.favicon || null
-            };
-            
-            // 更新在线玩家显示（顶部卡片）
+        } catch(e) {}
+        
+        // 降级 mcapi.us
+        if (!data) {
+            try {
+                const res = await fetch(`https://mcapi.us/server/status?ip=${apiAddress}&port=${port}`, { headers: { 'Accept': 'application/json' }, signal: AbortSignal.timeout(8000) });
+                if (res.ok) {
+                    const raw = await res.json();
+                    data = {
+                        online: raw.online || false,
+                        players: { online: raw.players?.now || 0, max: raw.players?.max || '?', list: (raw.players?.sample || []).map(p => ({ name_clean: p.name })) },
+                        version: { name_clean: raw.server?.name || '—' },
+                        motd: { clean: raw.motd || '—' },
+                        icon: raw.favicon || null
+                    };
+                }
+            } catch(e) {}
+        }
+        
+        if (data) {
             if (data.online) {
-                const onlinePlayers = data.players?.online || 0;
-                const maxPlayers = data.players?.max || '?';
-                onlinePlayersEl.textContent = `${onlinePlayers}/${maxPlayers}`;
-                console.log('在线玩家已更新:', onlinePlayersEl.textContent);
+                onlinePlayersEl.textContent = `${data.players?.online || 0}/${data.players?.max || '?'}`;
             } else {
                 onlinePlayersEl.textContent = '离线';
             }
-            
-            // 更新完整状态显示
             updateServerStatusUI(data);
-            
-        } catch (error) {
-            console.error('获取服务器状态失败:', error);
-            onlinePlayersEl.textContent = '离线';
-            setOfflineState();
+        } else {
+            onlinePlayersEl.textContent = '—';
+            if (serverStatusText) serverStatusText.textContent = '状态获取失败';
+            if (serverStatusDot) { serverStatusDot.className = 'status-dot'; serverStatusDot.style.background = 'var(--color-warning)'; }
+            if (serverIcon) { serverIcon.src = '/assets/load/Obsidian.png'; serverIcon.style.display = 'block'; serverIcon.style.opacity = '0.5'; }
         }
     }
     
     // 初始获取状态
-    console.log('开始获取服务器状态...');
     await fetchServerStatus();
     
     // 每60秒更新一次状态
     setInterval(fetchServerStatus, 60000);
-    console.log('定时器已设置，每30秒更新一次');
 });
 </script>
 
@@ -458,7 +447,11 @@ document.addEventListener('DOMContentLoaded', async function() {
 .page-content {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
+}
+.welcome-guide {
+    max-width: 800px;
+    margin: 0 auto 0.5rem;
 }
 
 .server-info-section {
@@ -909,26 +902,14 @@ document.addEventListener('DOMContentLoaded', async function() {
     background: linear-gradient(135deg, var(--glass-bg), var(--color-card-bg));
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-md);
-    padding: 0.5rem 0.7rem;
-    text-align: center;
-    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
     font-weight: 600;
     color: var(--color-text);
     transition: all 0.3s var(--ease-spring);
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    justify-content: center;
 }
-.player-item::before {
-    content: '';
-    display: inline-block;
-    width: 8px; height: 8px;
-    background: var(--color-success);
-    border-radius: 50%;
-    flex-shrink: 0;
-    box-shadow: 0 0 6px var(--color-success);
-
 .player-item:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-sm);
@@ -1052,7 +1033,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     .server-status-card { padding: 1.5rem 1rem; }
     #serverAddress { font-size: 1rem; padding: 0.5rem 0.8rem; min-width: auto; width: 100%; }
     .stat-value { font-size: 1.2rem; }
-    .players-list { grid-template-columns: repeat(auto-fill, minmax(80px, 1fr)); max-height: 120px; }
+    .players-list { grid-template-columns: repeat(2, 1fr); max-height: 120px; }
     .player-item { font-size: 0.75rem; padding: 0.3rem; }
     .detail-value { font-size: 0.9rem; }
 }
