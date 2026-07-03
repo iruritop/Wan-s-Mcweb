@@ -51,7 +51,7 @@ const historyData = await getHistoryData(websiteConfig.history);
                   <div class="history-content-info">
                     <h3 class="history-item-title">{item.title}</h3>
                     <div class="history-authors">
-                      <span class="authors-label">作者：</span>
+                      <span class="authors-label">摄影师：</span>
                       {item.authors.map((author, i) => (
                         <span class="author-tag">{author}</span>
                       ))}
@@ -667,13 +667,13 @@ const historyData = await getHistoryData(websiteConfig.history);
           const title = titleElement?.textContent || '未知标题';
           const date = dateElement?.textContent || '未知日期';
           
-          let authors = '未知作者';
+          let authors = '未知摄影师';
           if (authorsElement) {
             const authorTags = authorsElement.querySelectorAll('.author-tag');
             if (authorTags.length > 0) {
               authors = Array.from(authorTags).map(tag => tag.textContent).join(', ');
             } else {
-              authors = authorsElement.textContent.replace('作者：', '').trim();
+              authors = authorsElement.textContent.replace('摄影师：', '').trim();
             }
           }
           
@@ -695,7 +695,7 @@ const historyData = await getHistoryData(websiteConfig.history);
         modalImg.src = data.imageUrl;
         modalTitle.textContent = data.title;
         modalDate.textContent = data.date;
-        modalAuthors.textContent = `作者：${data.authors}`;
+        modalAuthors.textContent = `摄影师：${data.authors}`;
         currentIndex = index;
         
         // 更新导航按钮状态
