@@ -1,5 +1,5 @@
 {
-  "export_time": "2026-07-03 03:00:01",
+  "export_time": "2026-07-03 06:00:01",
   "source_file": "scoreboard.dat",
   "local_copy": "cache/scoreboard_copy.dat",
   "total_objectives": 10,
@@ -8,11 +8,11 @@
       "player_scores": [
         {
           "player": "总活跃时间",
-          "score": 1276
+          "score": 1282
         },
         {
           "player": "总活跃时间",
-          "score": 638
+          "score": 641
         },
         {
           "player": "gliese581g32",
@@ -72,7 +72,7 @@
         },
         {
           "player": "iruri",
-          "score": 1
+          "score": 4
         }
       ]
     },
@@ -80,11 +80,11 @@
       "player_scores": [
         {
           "player": "总建造数",
-          "score": 314828
+          "score": 314832
         },
         {
           "player": "总建造数",
-          "score": 157414
+          "score": 157416
         },
         {
           "player": "caTvT",
@@ -157,6 +157,10 @@
         {
           "player": "erpu12",
           "score": 3
+        },
+        {
+          "player": "iruri",
+          "score": 2
         }
       ]
     },
@@ -648,7 +652,7 @@
       "player_scores": [
         {
           "player": "总general",
-          "score": 3334328
+          "score": 3334333
         },
         {
           "player": "总飞行距离",
@@ -660,7 +664,7 @@
         },
         {
           "player": "总建造数",
-          "score": 157414
+          "score": 157416
         },
         {
           "player": "总受伤害数",
@@ -676,7 +680,7 @@
         },
         {
           "player": "总活跃时间",
-          "score": 638
+          "score": 641
         },
         {
           "player": "总死亡数",
@@ -690,7 +694,7 @@
     }
   },
   "overall_statistics": {
-    "total_players_across_objectives": 161,
+    "total_players_across_objectives": 162,
     "objectives_found": [
       "fzsd.module.scoreboard.display.activation",
       "fzsd.module.scoreboard.display.placement_count",
