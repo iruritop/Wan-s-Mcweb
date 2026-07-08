@@ -156,14 +156,24 @@ const safePageTitle = pageTitle || {
   }
 
   .typewriter-text {
-    border-right: 3px solid var(--color-primary);
-    padding-right: 5px;
+    position: relative;
+    padding-right: 8px;
+  }
+
+  .typewriter-text::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0.1em;
+    bottom: 0.1em;
+    width: 3px;
+    background: var(--color-primary);
     animation: blink-caret 1s step-end infinite;
   }
 
   @keyframes blink-caret {
-    from, to { border-color: transparent; }
-    50% { border-color: var(--color-primary); }
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
   }
 
   .page-subtitle {
