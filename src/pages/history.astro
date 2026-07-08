@@ -36,12 +36,13 @@ const historyData = await getHistoryData(websiteConfig.history);
                       src={item.thumbnailUrl}
                       alt={item.title}
                       class="history-image"
-                      loading="lazy"
+                      loading={index === 0 ? "eager" : "lazy"}
+                      fetchpriority={index === 0 ? "high" : "auto"}
                       decoding="async"
                       data-fullsize={item.imageUrl}
                     />
                     <div class="image-overlay">
-                      <button class="view-fullsize-btn" data-image={item.imageUrl}>
+                      <button class="view-fullsize-btn" data-image={item.imageUrl} aria-label={`查看大图：${item.title}`}>
                         <i class="mdi mdi-magnify"></i>
                       </button>
                     </div>
