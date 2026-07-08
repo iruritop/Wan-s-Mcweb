@@ -89,6 +89,31 @@ document.addEventListener('DOMContentLoaded', updateNavHighlight);
 
 // 监听页面导航事件（SPA 导航）
 document.addEventListener('astro:page-load', updateNavHighlight);
+
+// 移动端菜单切换
+const mobileToggle = document.getElementById('mobile-menu-toggle');
+const navbarMenu = document.querySelector('.navbar-menu');
+if (mobileToggle && navbarMenu) {
+    mobileToggle.addEventListener('click', () => {
+        navbarMenu.classList.toggle('active');
+        const icon = mobileToggle.querySelector('i');
+        if (icon) {
+            icon.classList.toggle('mdi-menu');
+            icon.classList.toggle('mdi-close');
+        }
+    });
+    // 点击菜单外部关闭
+    document.addEventListener('click', (e) => {
+        if (!navbarMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+            navbarMenu.classList.remove('active');
+            const icon = mobileToggle.querySelector('i');
+            if (icon) {
+                icon.classList.add('mdi-menu');
+                icon.classList.remove('mdi-close');
+            }
+        }
+    });
+}
 </script>
 
 <style>
