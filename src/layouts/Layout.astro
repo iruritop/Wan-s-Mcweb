@@ -21,16 +21,13 @@ const { title, description } = Astro.props;
     <title>{title ? `${title} - ${websiteConfig.site.title}` : websiteConfig.site.title}</title>
 
     <!-- 预加载字体 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com">
+    <link rel="preload" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.googleapis.cn/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&family=Quicksand:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
-    <!-- 图标库 — 本地自托管 -->
-    <link rel="stylesheet" href="/styles/mdi.css">
-    
-    <!-- 样式 -->
+    <link rel="stylesheet" href="/styles/mdi.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/styles/mdi.css"></noscript>
     <link rel="stylesheet" href="/styles/global.css" />
-    
+
     <!-- 字体配置 -->
     <script>
         // 暴露字体配置给前端
