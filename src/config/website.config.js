@@ -331,7 +331,7 @@ export const websiteConfig = {
             { label: "CPU", value: "Intel 8核 3.10GHz" },
             { label: "内存", value: "40GB" },  
             { label: "类型", value: "生存，探险，建筑" },
-            { label: "最大玩家", value: "15人" },
+            { label: "最大玩家", value: "20人" },
             { label: "在线时间", value: "7×24小时" }
           ]
       },
