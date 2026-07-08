@@ -343,8 +343,8 @@ document.addEventListener('DOMContentLoaded', async function() {
         }
     }
     
-    // 初始获取状态
-    await fetchServerStatus();
+    // 初始获取状态（不阻塞页面渲染）
+    fetchServerStatus();
     
     // 每60秒更新一次状态
     setInterval(fetchServerStatus, 60000);
