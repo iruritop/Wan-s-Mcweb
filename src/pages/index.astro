@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             serverStatusDot.style.animation = 'none';
         }
         if (serverIcon) {
-            serverIcon.src = '/assets/load/Obsidian.png';
+            serverIcon.src = '/assets/load/Obsidian.webp';
             serverIcon.style.display = 'block';
             serverIcon.style.opacity = '0.4';
         }
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             onlinePlayersEl.textContent = '—';
             if (serverStatusText) serverStatusText.textContent = '状态获取失败';
             if (serverStatusDot) { serverStatusDot.className = 'status-dot'; serverStatusDot.style.background = 'var(--color-warning)'; }
-            if (serverIcon) { serverIcon.src = '/assets/load/Obsidian.png'; serverIcon.style.display = 'block'; serverIcon.style.opacity = '0.5'; }
+            if (serverIcon) { serverIcon.src = '/assets/load/Obsidian.webp'; serverIcon.style.display = 'block'; serverIcon.style.opacity = '0.5'; }
         }
     }
     

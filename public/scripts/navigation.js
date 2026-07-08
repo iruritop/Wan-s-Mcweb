@@ -5,8 +5,7 @@ class NavigationManager {
         this.lastScrollTop = 0;
         this.hideThreshold = 100; // 向下滚动100px后隐藏
         this.showThreshold = 50;  // 向上滚动到距离顶部50px时显示
-        this.isScrolling = false;
-        this.scrollTimeout = null;
+        this.rafPending = false;
         
         this.init();
     }
@@ -25,27 +24,21 @@ class NavigationManager {
     }
 
     handleScroll() {
-        if (this.isScrolling) return;
-        
-        this.isScrolling = true;
-        
+        if (this.rafPending) return;
+        this.rafPending = true;
         requestAnimationFrame(() => {
             this.checkScrollPosition();
-            this.isScrolling = false;
+            this.rafPending = false;
         });
     }
 
     checkScrollPosition() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
+        const scrollTop = window.scrollY;
         if (scrollTop > this.lastScrollTop && scrollTop > this.hideThreshold) {
-            // 向下滚动，隐藏导航栏
             this.hideNavbar();
         } else if (scrollTop < this.lastScrollTop && scrollTop < this.showThreshold) {
-            // 向上滚动到顶部附近，显示导航栏
             this.showNavbar();
         }
-        
         this.lastScrollTop = scrollTop;
     }
 

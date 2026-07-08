@@ -9,7 +9,7 @@
       <!-- 黑曜石方块 -->
       <div class="obsidian-block">
         <img 
-          src="/assets/load/Obsidian.png" 
+          src="/assets/load/Obsidian.webp" 
           alt="黑曜石" 
           class="obsidian"
         />
@@ -19,7 +19,7 @@
       <!-- 钻石镐 -->
       <div class="pickaxe-container">
         <img 
-          src="/assets/load/Diamond_Pickaxe.png" 
+          src="/assets/load/Diamond_Pickaxe.webp" 
           alt="钻石镐" 
           class="diamond-pickaxe"
         />
@@ -98,6 +98,7 @@
   height: 100%;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
   animation: block-pulse 2s var(--ease-smooth) infinite;
+  will-change: filter;
 }
 
 .pickaxe-container {
@@ -116,6 +117,7 @@
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
   animation: mining-swing 1.5s var(--ease-bounce) infinite;
   transform-origin: center bottom;
+  will-change: transform, filter;
 }
 
 .mining-effect {
