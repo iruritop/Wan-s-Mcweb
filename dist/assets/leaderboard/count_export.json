@@ -1,5 +1,5 @@
 {
-  "export_time": "2026-07-09 03:00:01",
+  "export_time": "2026-07-09 06:00:01",
   "source_file": "scoreboard.dat",
   "local_copy": "cache/scoreboard_copy.dat",
   "total_objectives": 10,
@@ -8,11 +8,11 @@
       "player_scores": [
         {
           "player": "总受伤害数",
-          "score": 162802
+          "score": 162910
         },
         {
           "player": "总受伤害数",
-          "score": 81401
+          "score": 81455
         },
         {
           "player": "Cristhel",
@@ -88,7 +88,7 @@
         },
         {
           "player": "moumouren",
-          "score": 579
+          "score": 633
         },
         {
           "player": "jiaran_114",
@@ -148,23 +148,23 @@
       "player_scores": [
         {
           "player": "总建造数",
-          "score": 542814
+          "score": 549914
         },
         {
           "player": "总建造数",
-          "score": 271407
+          "score": 274957
         },
         {
           "player": "caTvT",
           "score": 64748
         },
         {
-          "player": "cmbbx",
-          "score": 30143
+          "player": "DaNeng520",
+          "score": 32469
         },
         {
-          "player": "DaNeng520",
-          "score": 29419
+          "player": "cmbbx",
+          "score": 30143
         },
         {
           "player": "gliese581g32",
@@ -227,16 +227,16 @@
           "score": 2662
         },
         {
+          "player": "moumouren",
+          "score": 817
+        },
+        {
           "player": "coul",
           "score": 782
         },
         {
           "player": "MamaHuhu810",
           "score": 485
-        },
-        {
-          "player": "moumouren",
-          "score": 317
         },
         {
           "player": "Xiao_o_",
@@ -348,11 +348,11 @@
       "player_scores": [
         {
           "player": "总活跃时间",
-          "score": 2112
+          "score": 2130
         },
         {
           "player": "总活跃时间",
-          "score": 1056
+          "score": 1065
         },
         {
           "player": "gliese581g32",
@@ -368,11 +368,11 @@
         },
         {
           "player": "DaNeng520",
-          "score": 101
+          "score": 104
         },
         {
           "player": "Yik4u",
-          "score": 68
+          "score": 71
         },
         {
           "player": "yaoyikoutao",
@@ -427,6 +427,10 @@
           "score": 7
         },
         {
+          "player": "moumouren",
+          "score": 6
+        },
+        {
           "player": "MamaHuhu810",
           "score": 6
         },
@@ -437,10 +441,6 @@
         {
           "player": "iruri",
           "score": 4
-        },
-        {
-          "player": "moumouren",
-          "score": 3
         },
         {
           "player": "cheng",
@@ -460,11 +460,11 @@
       "player_scores": [
         {
           "player": "总击杀数",
-          "score": 55142
+          "score": 55158
         },
         {
           "player": "总击杀数",
-          "score": 27571
+          "score": 27579
         },
         {
           "player": "gliese581g32",
@@ -480,7 +480,7 @@
         },
         {
           "player": "DaNeng520",
-          "score": 2126
+          "score": 2127
         },
         {
           "player": "Cristhel",
@@ -539,12 +539,12 @@
           "score": 142
         },
         {
-          "player": "A_Chai_",
-          "score": 73
+          "player": "moumouren",
+          "score": 74
         },
         {
-          "player": "moumouren",
-          "score": 67
+          "player": "A_Chai_",
+          "score": 73
         },
         {
           "player": "Xiao_o_",
@@ -576,11 +576,11 @@
       "player_scores": [
         {
           "player": "总挖掘数",
-          "score": 1247354
+          "score": 1251128
         },
         {
           "player": "总挖掘数",
-          "score": 623677
+          "score": 625564
         },
         {
           "player": "caTvT",
@@ -651,12 +651,12 @@
           "score": 4064
         },
         {
-          "player": "MamaHuhu810",
-          "score": 2505
+          "player": "moumouren",
+          "score": 3945
         },
         {
-          "player": "moumouren",
-          "score": 2058
+          "player": "MamaHuhu810",
+          "score": 2505
         },
         {
           "player": "Xiao_o_",
@@ -800,11 +800,11 @@
       "player_scores": [
         {
           "player": "总飞行距离",
-          "score": 8214296
+          "score": 8222738
         },
         {
           "player": "总飞行距离",
-          "score": 4107148
+          "score": 4111369
         },
         {
           "player": "gliese581g32",
@@ -828,7 +828,7 @@
         },
         {
           "player": "DaNeng520",
-          "score": 251660
+          "score": 251938
         },
         {
           "player": "yaoyikoutao",
@@ -879,16 +879,16 @@
           "score": 24498
         },
         {
+          "player": "moumouren",
+          "score": 20062
+        },
+        {
           "player": "A_Chai_",
           "score": 20059
         },
         {
           "player": "cmbbx",
           "score": 16954
-        },
-        {
-          "player": "moumouren",
-          "score": 16119
         },
         {
           "player": "fafajvcn",
@@ -932,27 +932,27 @@
       "player_scores": [
         {
           "player": "总general",
-          "score": 5126846
+          "score": 5136575
         },
         {
           "player": "总飞行距离",
-          "score": 4107148
+          "score": 4111369
         },
         {
           "player": "总挖掘数",
-          "score": 623677
+          "score": 625564
         },
         {
           "player": "总建造数",
-          "score": 271407
+          "score": 274957
         },
         {
           "player": "总受伤害数",
-          "score": 81401
+          "score": 81455
         },
         {
           "player": "总击杀数",
-          "score": 27571
+          "score": 27579
         },
         {
           "player": "总交易数",
@@ -960,7 +960,7 @@
         },
         {
           "player": "总活跃时间",
-          "score": 1056
+          "score": 1065
         },
         {
           "player": "总死亡数",
