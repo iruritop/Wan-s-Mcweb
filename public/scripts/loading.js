@@ -10,20 +10,20 @@
         spinner.style.display = 'flex';
         requestAnimationFrame(function() { spinner.classList.add('show'); });
         document.body.style.overflow = 'hidden';
-        if (progress) progress.style.width = '0%';
+        if (progress) progress.style.transform = 'scaleX(0)';
         var p = 0;
         timer = setInterval(function() {
             if (p < 60) p += 8;
             else if (p < 85) p += 3;
             else if (p < 90) p += 1;
             else { clearInterval(timer); timer = null; }
-            if (progress) progress.style.width = p + '%';
+            if (progress) progress.style.transform = 'scaleX(' + (p / 100) + ')';
         }, 80);
     }
 
     function hide() {
         if (timer) { clearInterval(timer); timer = null; }
-        if (progress) progress.style.width = '100%';
+        if (progress) progress.style.transform = 'scaleX(1)';
         setTimeout(function() {
             spinner.classList.remove('show');
             setTimeout(function() {

@@ -33,7 +33,7 @@ const description = "了解服务器的详细信息和管理团队";
                         return (
                             <div class="info-card card">
                                 <i class={iconClass}></i>
-                                <h3>{section.title}</h3>
+                                <h2>{section.title}</h2>
                                 <ul class="info-list">
                                     {section.items.map(item => (
                                         <li>
@@ -196,7 +196,7 @@ const description = "了解服务器的详细信息和管理团队";
     justify-content: center;
 }
 
-.info-card h3 {
+.info-card h2 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     color: var(--color-text);
@@ -437,7 +437,7 @@ const description = "了解服务器的详细信息和管理团队";
         height: 56px;
         font-size: 1.8rem;
     }
-    .info-card h3 { font-size: 1.2rem; }
+    .info-card h2 { font-size: 1.2rem; }
     .rule-card h4, .contact-card h4 { font-size: 1.1rem; }
     .section-title { font-size: 1.8rem; }
     .members-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; }
@@ -458,7 +458,7 @@ const description = "了解服务器的详细信息和管理团队";
         height: 48px;
         font-size: 1.5rem;
     }
-    .info-card h3 { font-size: 1rem; }
+    .info-card h2 { font-size: 1rem; }
     .rule-card h4, .contact-card h4 { font-size: 1rem; }
 }
 </style>
