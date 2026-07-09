@@ -1,106 +1,26 @@
 {
-  "export_time": "2026-07-09 21:00:01",
+  "export_time": "2026-07-10 00:00:02",
   "source_file": "scoreboard.dat",
   "local_copy": "cache/scoreboard_copy.dat",
   "total_objectives": 10,
   "objectives": {
-    "fzsd.module.scoreboard.display.trade_count": {
-      "player_scores": [
-        {
-          "player": "总交易数",
-          "score": 29680
-        },
-        {
-          "player": "总交易数",
-          "score": 14840
-        },
-        {
-          "player": "_lao_da_",
-          "score": 8065
-        },
-        {
-          "player": "Karina_Bluu",
-          "score": 1737
-        },
-        {
-          "player": "DaNeng520",
-          "score": 1008
-        },
-        {
-          "player": "Cycsdom",
-          "score": 954
-        },
-        {
-          "player": "Yik4u",
-          "score": 894
-        },
-        {
-          "player": "caTvT",
-          "score": 796
-        },
-        {
-          "player": "Xiao_o_",
-          "score": 578
-        },
-        {
-          "player": "cmbbx",
-          "score": 315
-        },
-        {
-          "player": "loveMuelsyse0000",
-          "score": 150
-        },
-        {
-          "player": "gliese581g32",
-          "score": 120
-        },
-        {
-          "player": "yaoyikoutao",
-          "score": 69
-        },
-        {
-          "player": "MamaHuhu810",
-          "score": 62
-        },
-        {
-          "player": "Figure_Arnold",
-          "score": 57
-        },
-        {
-          "player": "jumao12138",
-          "score": 16
-        },
-        {
-          "player": "fafajvcn",
-          "score": 10
-        },
-        {
-          "player": "Cristhel",
-          "score": 8
-        },
-        {
-          "player": "coul",
-          "score": 1
-        }
-      ]
-    },
     "fzsd.module.scoreboard.display.death_count": {
       "player_scores": [
         {
           "player": "总死亡数",
-          "score": 1170
+          "score": 1226
         },
         {
           "player": "总死亡数",
-          "score": 585
+          "score": 613
         },
         {
           "player": "Yik4u",
-          "score": 110
+          "score": 120
         },
         {
           "player": "caTvT",
-          "score": 94
+          "score": 95
         },
         {
           "player": "loveMuelsyse0000",
@@ -112,7 +32,7 @@
         },
         {
           "player": "fafajvcn",
-          "score": 32
+          "score": 40
         },
         {
           "player": "coul",
@@ -120,15 +40,15 @@
         },
         {
           "player": "Figure_Arnold",
-          "score": 27
+          "score": 28
+        },
+        {
+          "player": "jumao12138",
+          "score": 22
         },
         {
           "player": "Cristhel",
           "score": 20
-        },
-        {
-          "player": "jumao12138",
-          "score": 19
         },
         {
           "player": "Karina_Bluu",
@@ -156,7 +76,7 @@
         },
         {
           "player": "A_Chai_",
-          "score": 7
+          "score": 9
         },
         {
           "player": "DaNeng520",
@@ -173,6 +93,10 @@
         {
           "player": "Xiao_o_",
           "score": 4
+        },
+        {
+          "player": "c0v0at",
+          "score": 3
         },
         {
           "player": "jiaran_114",
@@ -200,375 +124,107 @@
         }
       ]
     },
-    "fzsd.module.scoreboard.display.damage_taken": {
+    "fzsd.module.scoreboard.display.aviating_distance": {
       "player_scores": [
         {
-          "player": "总受伤害数",
-          "score": 172020
+          "player": "总飞行距离",
+          "score": 8892994
         },
         {
-          "player": "总受伤害数",
-          "score": 86010
-        },
-        {
-          "player": "Cristhel",
-          "score": 11991
-        },
-        {
-          "player": "Yik4u",
-          "score": 11809
-        },
-        {
-          "player": "caTvT",
-          "score": 9850
+          "player": "总飞行距离",
+          "score": 4446497
         },
         {
           "player": "gliese581g32",
-          "score": 7646
-        },
-        {
-          "player": "loveMuelsyse0000",
-          "score": 5784
-        },
-        {
-          "player": "Figure_Arnold",
-          "score": 5723
-        },
-        {
-          "player": "_lao_da_",
-          "score": 5332
-        },
-        {
-          "player": "coul",
-          "score": 3682
-        },
-        {
-          "player": "Karina_Bluu",
-          "score": 3424
-        },
-        {
-          "player": "yaoyikoutao",
-          "score": 3362
-        },
-        {
-          "player": "DaNeng520",
-          "score": 3354
-        },
-        {
-          "player": "jumao12138",
-          "score": 2482
-        },
-        {
-          "player": "MircSaog",
-          "score": 2150
-        },
-        {
-          "player": "Rddisss",
-          "score": 1534
-        },
-        {
-          "player": "cmbbx",
-          "score": 1464
-        },
-        {
-          "player": "fafajvcn",
-          "score": 1371
-        },
-        {
-          "player": "Cycsdom",
-          "score": 1036
-        },
-        {
-          "player": "MamaHuhu810",
-          "score": 853
-        },
-        {
-          "player": "A_Chai_",
-          "score": 759
-        },
-        {
-          "player": "moumouren",
-          "score": 637
-        },
-        {
-          "player": "LikeRabbit",
-          "score": 492
-        },
-        {
-          "player": "jiaran_114",
-          "score": 473
-        },
-        {
-          "player": "Xiao_o_",
-          "score": 432
-        },
-        {
-          "player": "HuanDaoYuMeng",
-          "score": 212
-        },
-        {
-          "player": "1QWQ14514",
-          "score": 68
-        },
-        {
-          "player": "song_zhong",
-          "score": 33
-        },
-        {
-          "player": "cheng",
-          "score": 22
-        },
-        {
-          "player": "andaandaanda",
-          "score": 12
-        },
-        {
-          "player": "c0v0at",
-          "score": 11
-        },
-        {
-          "player": "erpu12",
-          "score": 5
-        },
-        {
-          "player": "jiaobaba",
-          "score": 3
-        },
-        {
-          "player": "roosa010",
-          "score": 2
-        },
-        {
-          "player": "bie_da_ni_die",
-          "score": 2
-        }
-      ]
-    },
-    "fzsd.module.scoreboard.display.activation": {
-      "player_scores": [
-        {
-          "player": "总活跃时间",
-          "score": 2240
-        },
-        {
-          "player": "总活跃时间",
-          "score": 1120
-        },
-        {
-          "player": "gliese581g32",
-          "score": 179
-        },
-        {
-          "player": "caTvT",
-          "score": 174
+          "score": 816500
         },
         {
           "player": "Cristhel",
-          "score": 145
-        },
-        {
-          "player": "DaNeng520",
-          "score": 110
-        },
-        {
-          "player": "Yik4u",
-          "score": 80
-        },
-        {
-          "player": "yaoyikoutao",
-          "score": 68
-        },
-        {
-          "player": "Karina_Bluu",
-          "score": 55
+          "score": 465158
         },
         {
           "player": "Figure_Arnold",
-          "score": 47
-        },
-        {
-          "player": "coul",
-          "score": 36
-        },
-        {
-          "player": "loveMuelsyse0000",
-          "score": 36
-        },
-        {
-          "player": "jumao12138",
-          "score": 33
-        },
-        {
-          "player": "Cycsdom",
-          "score": 31
-        },
-        {
-          "player": "cmbbx",
-          "score": 28
-        },
-        {
-          "player": "_lao_da_",
-          "score": 26
-        },
-        {
-          "player": "MircSaog",
-          "score": 15
-        },
-        {
-          "player": "LikeRabbit",
-          "score": 10
-        },
-        {
-          "player": "jiaran_114",
-          "score": 7
-        },
-        {
-          "player": "moumouren",
-          "score": 7
-        },
-        {
-          "player": "Rddisss",
-          "score": 7
-        },
-        {
-          "player": "MamaHuhu810",
-          "score": 6
-        },
-        {
-          "player": "A_Chai_",
-          "score": 5
-        },
-        {
-          "player": "Xiao_o_",
-          "score": 4
-        },
-        {
-          "player": "iruri",
-          "score": 4
-        },
-        {
-          "player": "fafajvcn",
-          "score": 4
-        },
-        {
-          "player": "cheng",
-          "score": 3
-        }
-      ]
-    },
-    "fzsd.module.scoreboard.display.kill_count": {
-      "player_scores": [
-        {
-          "player": "总击杀数",
-          "score": 57022
-        },
-        {
-          "player": "总击杀数",
-          "score": 28511
-        },
-        {
-          "player": "gliese581g32",
-          "score": 8398
-        },
-        {
-          "player": "Figure_Arnold",
-          "score": 4703
-        },
-        {
-          "player": "_lao_da_",
-          "score": 2369
-        },
-        {
-          "player": "Cristhel",
-          "score": 2132
-        },
-        {
-          "player": "DaNeng520",
-          "score": 2128
-        },
-        {
-          "player": "cmbbx",
-          "score": 1890
-        },
-        {
-          "player": "Karina_Bluu",
-          "score": 1395
+          "score": 433169
         },
         {
           "player": "caTvT",
-          "score": 1138
+          "score": 348757
         },
         {
-          "player": "coul",
-          "score": 1039
+          "player": "_lao_da_",
+          "score": 281420
         },
         {
-          "player": "jumao12138",
-          "score": 1028
+          "player": "DaNeng520",
+          "score": 274550
         },
         {
-          "player": "Cycsdom",
-          "score": 428
+          "player": "Karina_Bluu",
+          "score": 252156
         },
         {
           "player": "yaoyikoutao",
-          "score": 352
+          "score": 248710
         },
         {
-          "player": "MircSaog",
-          "score": 250
-        },
-        {
-          "player": "Rddisss",
-          "score": 216
+          "player": "jumao12138",
+          "score": 225435
         },
         {
           "player": "Yik4u",
-          "score": 193
+          "score": 189196
         },
         {
-          "player": "MamaHuhu810",
-          "score": 173
+          "player": "coul",
+          "score": 183215
         },
         {
-          "player": "jiaran_114",
-          "score": 156
+          "player": "Cycsdom",
+          "score": 156457
+        },
+        {
+          "player": "MircSaog",
+          "score": 150579
         },
         {
           "player": "loveMuelsyse0000",
-          "score": 142
+          "score": 118011
         },
         {
-          "player": "fafajvcn",
-          "score": 140
-        },
-        {
-          "player": "moumouren",
-          "score": 75
-        },
-        {
-          "player": "A_Chai_",
-          "score": 73
+          "player": "MamaHuhu810",
+          "score": 64313
         },
         {
           "player": "Xiao_o_",
-          "score": 60
+          "score": 40056
+        },
+        {
+          "player": "Rddisss",
+          "score": 36703
+        },
+        {
+          "player": "fafajvcn",
+          "score": 35423
+        },
+        {
+          "player": "jiaran_114",
+          "score": 33238
+        },
+        {
+          "player": "A_Chai_",
+          "score": 30254
         },
         {
           "player": "LikeRabbit",
-          "score": 20
+          "score": 25738
         },
         {
-          "player": "HuanDaoYuMeng",
-          "score": 6
+          "player": "moumouren",
+          "score": 20505
         },
         {
-          "player": "cheng",
-          "score": 4
-        },
-        {
-          "player": "andaandaanda",
-          "score": 3
+          "player": "cmbbx",
+          "score": 16954
         }
       ]
     },
@@ -576,11 +232,11 @@
       "player_scores": [
         {
           "player": "总挖掘数",
-          "score": 1294830
+          "score": 1301610
         },
         {
           "player": "总挖掘数",
-          "score": 647415
+          "score": 650805
         },
         {
           "player": "caTvT",
@@ -588,11 +244,11 @@
         },
         {
           "player": "Figure_Arnold",
-          "score": 77717
+          "score": 78708
         },
         {
           "player": "gliese581g32",
-          "score": 72526
+          "score": 72529
         },
         {
           "player": "cmbbx",
@@ -600,11 +256,11 @@
         },
         {
           "player": "Cristhel",
-          "score": 43313
+          "score": 43314
         },
         {
           "player": "Yik4u",
-          "score": 34376
+          "score": 35608
         },
         {
           "player": "Karina_Bluu",
@@ -632,7 +288,7 @@
         },
         {
           "player": "jumao12138",
-          "score": 10549
+          "score": 10550
         },
         {
           "player": "loveMuelsyse0000",
@@ -647,28 +303,28 @@
           "score": 5166
         },
         {
-          "player": "LikeRabbit",
-          "score": 4096
+          "player": "moumouren",
+          "score": 4248
         },
         {
-          "player": "moumouren",
-          "score": 4061
+          "player": "LikeRabbit",
+          "score": 4096
         },
         {
           "player": "MamaHuhu810",
           "score": 2505
         },
         {
-          "player": "Xiao_o_",
-          "score": 1405
+          "player": "fafajvcn",
+          "score": 2097
         },
         {
-          "player": "fafajvcn",
-          "score": 1322
+          "player": "Xiao_o_",
+          "score": 1439
         },
         {
           "player": "A_Chai_",
-          "score": 1221
+          "score": 1387
         },
         {
           "player": "DaNeng520",
@@ -680,107 +336,455 @@
         }
       ]
     },
-    "fzsd.module.scoreboard.display.aviating_distance": {
+    "fzsd.module.scoreboard.display.activation": {
       "player_scores": [
         {
-          "player": "总飞行距离",
-          "score": 8563426
+          "player": "总活跃时间",
+          "score": 2282
         },
         {
-          "player": "总飞行距离",
-          "score": 4281713
+          "player": "总活跃时间",
+          "score": 1141
         },
         {
           "player": "gliese581g32",
-          "score": 796872
-        },
-        {
-          "player": "Cristhel",
-          "score": 450511
-        },
-        {
-          "player": "Figure_Arnold",
-          "score": 418705
+          "score": 181
         },
         {
           "player": "caTvT",
-          "score": 348339
+          "score": 174
         },
         {
-          "player": "_lao_da_",
-          "score": 281420
+          "player": "Cristhel",
+          "score": 148
         },
         {
           "player": "DaNeng520",
-          "score": 255156
-        },
-        {
-          "player": "Karina_Bluu",
-          "score": 252156
-        },
-        {
-          "player": "yaoyikoutao",
-          "score": 248710
-        },
-        {
-          "player": "jumao12138",
-          "score": 215149
-        },
-        {
-          "player": "coul",
-          "score": 183215
+          "score": 112
         },
         {
           "player": "Yik4u",
-          "score": 180065
+          "score": 83
         },
         {
-          "player": "Cycsdom",
-          "score": 156457
+          "player": "yaoyikoutao",
+          "score": 68
         },
         {
-          "player": "MircSaog",
-          "score": 150579
+          "player": "Karina_Bluu",
+          "score": 55
+        },
+        {
+          "player": "Figure_Arnold",
+          "score": 49
         },
         {
           "player": "loveMuelsyse0000",
-          "score": 113365
+          "score": 37
         },
         {
-          "player": "MamaHuhu810",
-          "score": 64313
+          "player": "coul",
+          "score": 36
         },
         {
-          "player": "Rddisss",
-          "score": 36703
+          "player": "jumao12138",
+          "score": 35
         },
         {
-          "player": "jiaran_114",
-          "score": 33238
-        },
-        {
-          "player": "LikeRabbit",
-          "score": 25738
-        },
-        {
-          "player": "moumouren",
-          "score": 20351
-        },
-        {
-          "player": "A_Chai_",
-          "score": 20059
+          "player": "Cycsdom",
+          "score": 31
         },
         {
           "player": "cmbbx",
-          "score": 16954
+          "score": 28
+        },
+        {
+          "player": "_lao_da_",
+          "score": 26
+        },
+        {
+          "player": "MircSaog",
+          "score": 15
+        },
+        {
+          "player": "LikeRabbit",
+          "score": 10
+        },
+        {
+          "player": "moumouren",
+          "score": 8
+        },
+        {
+          "player": "jiaran_114",
+          "score": 7
+        },
+        {
+          "player": "Rddisss",
+          "score": 7
+        },
+        {
+          "player": "MamaHuhu810",
+          "score": 6
         },
         {
           "player": "Xiao_o_",
-          "score": 8167
+          "score": 6
+        },
+        {
+          "player": "A_Chai_",
+          "score": 6
         },
         {
           "player": "fafajvcn",
-          "score": 5491
+          "score": 6
+        },
+        {
+          "player": "iruri",
+          "score": 4
+        },
+        {
+          "player": "cheng",
+          "score": 3
+        }
+      ]
+    },
+    "fzsd.module.scoreboard.display.trade_count": {
+      "player_scores": [
+        {
+          "player": "总交易数",
+          "score": 30344
+        },
+        {
+          "player": "总交易数",
+          "score": 15172
+        },
+        {
+          "player": "_lao_da_",
+          "score": 8065
+        },
+        {
+          "player": "Karina_Bluu",
+          "score": 1737
+        },
+        {
+          "player": "Yik4u",
+          "score": 1093
+        },
+        {
+          "player": "DaNeng520",
+          "score": 1008
+        },
+        {
+          "player": "Cycsdom",
+          "score": 954
+        },
+        {
+          "player": "caTvT",
+          "score": 796
+        },
+        {
+          "player": "Xiao_o_",
+          "score": 579
+        },
+        {
+          "player": "cmbbx",
+          "score": 315
+        },
+        {
+          "player": "loveMuelsyse0000",
+          "score": 196
+        },
+        {
+          "player": "gliese581g32",
+          "score": 120
+        },
+        {
+          "player": "fafajvcn",
+          "score": 96
+        },
+        {
+          "player": "yaoyikoutao",
+          "score": 69
+        },
+        {
+          "player": "MamaHuhu810",
+          "score": 62
+        },
+        {
+          "player": "Figure_Arnold",
+          "score": 57
+        },
+        {
+          "player": "jumao12138",
+          "score": 16
+        },
+        {
+          "player": "Cristhel",
+          "score": 8
+        },
+        {
+          "player": "coul",
+          "score": 1
+        }
+      ]
+    },
+    "fzsd.module.scoreboard.display.damage_taken": {
+      "player_scores": [
+        {
+          "player": "总受伤害数",
+          "score": 177968
+        },
+        {
+          "player": "总受伤害数",
+          "score": 88984
+        },
+        {
+          "player": "Yik4u",
+          "score": 12365
+        },
+        {
+          "player": "Cristhel",
+          "score": 12042
+        },
+        {
+          "player": "caTvT",
+          "score": 9913
+        },
+        {
+          "player": "gliese581g32",
+          "score": 7657
+        },
+        {
+          "player": "Figure_Arnold",
+          "score": 6227
+        },
+        {
+          "player": "loveMuelsyse0000",
+          "score": 5901
+        },
+        {
+          "player": "_lao_da_",
+          "score": 5332
+        },
+        {
+          "player": "coul",
+          "score": 3682
+        },
+        {
+          "player": "DaNeng520",
+          "score": 3448
+        },
+        {
+          "player": "Karina_Bluu",
+          "score": 3424
+        },
+        {
+          "player": "yaoyikoutao",
+          "score": 3362
+        },
+        {
+          "player": "jumao12138",
+          "score": 2969
+        },
+        {
+          "player": "MircSaog",
+          "score": 2150
+        },
+        {
+          "player": "fafajvcn",
+          "score": 1759
+        },
+        {
+          "player": "Rddisss",
+          "score": 1534
+        },
+        {
+          "player": "cmbbx",
+          "score": 1464
+        },
+        {
+          "player": "Cycsdom",
+          "score": 1036
+        },
+        {
+          "player": "A_Chai_",
+          "score": 892
+        },
+        {
+          "player": "MamaHuhu810",
+          "score": 853
+        },
+        {
+          "player": "Xiao_o_",
+          "score": 758
+        },
+        {
+          "player": "moumouren",
+          "score": 639
+        },
+        {
+          "player": "LikeRabbit",
+          "score": 492
+        },
+        {
+          "player": "jiaran_114",
+          "score": 473
+        },
+        {
+          "player": "c0v0at",
+          "score": 253
+        },
+        {
+          "player": "HuanDaoYuMeng",
+          "score": 212
+        },
+        {
+          "player": "1QWQ14514",
+          "score": 68
+        },
+        {
+          "player": "song_zhong",
+          "score": 33
+        },
+        {
+          "player": "cheng",
+          "score": 22
+        },
+        {
+          "player": "andaandaanda",
+          "score": 12
+        },
+        {
+          "player": "erpu12",
+          "score": 5
+        },
+        {
+          "player": "jiaobaba",
+          "score": 3
+        },
+        {
+          "player": "roosa010",
+          "score": 2
+        },
+        {
+          "player": "bie_da_ni_die",
+          "score": 2
+        }
+      ]
+    },
+    "fzsd.module.scoreboard.display.kill_count": {
+      "player_scores": [
+        {
+          "player": "总击杀数",
+          "score": 58398
+        },
+        {
+          "player": "总击杀数",
+          "score": 29199
+        },
+        {
+          "player": "gliese581g32",
+          "score": 8432
+        },
+        {
+          "player": "Figure_Arnold",
+          "score": 4843
+        },
+        {
+          "player": "_lao_da_",
+          "score": 2369
+        },
+        {
+          "player": "Cristhel",
+          "score": 2174
+        },
+        {
+          "player": "DaNeng520",
+          "score": 2150
+        },
+        {
+          "player": "cmbbx",
+          "score": 1890
+        },
+        {
+          "player": "Karina_Bluu",
+          "score": 1395
+        },
+        {
+          "player": "jumao12138",
+          "score": 1231
+        },
+        {
+          "player": "caTvT",
+          "score": 1138
+        },
+        {
+          "player": "coul",
+          "score": 1039
+        },
+        {
+          "player": "Cycsdom",
+          "score": 428
+        },
+        {
+          "player": "yaoyikoutao",
+          "score": 352
+        },
+        {
+          "player": "MircSaog",
+          "score": 250
+        },
+        {
+          "player": "loveMuelsyse0000",
+          "score": 217
+        },
+        {
+          "player": "Rddisss",
+          "score": 216
+        },
+        {
+          "player": "fafajvcn",
+          "score": 198
+        },
+        {
+          "player": "Yik4u",
+          "score": 193
+        },
+        {
+          "player": "MamaHuhu810",
+          "score": 173
+        },
+        {
+          "player": "jiaran_114",
+          "score": 156
+        },
+        {
+          "player": "Xiao_o_",
+          "score": 143
+        },
+        {
+          "player": "A_Chai_",
+          "score": 104
+        },
+        {
+          "player": "moumouren",
+          "score": 75
+        },
+        {
+          "player": "LikeRabbit",
+          "score": 20
+        },
+        {
+          "player": "HuanDaoYuMeng",
+          "score": 6
+        },
+        {
+          "player": "cheng",
+          "score": 4
+        },
+        {
+          "player": "andaandaanda",
+          "score": 3
         }
       ]
     },
@@ -788,19 +792,19 @@
       "player_scores": [
         {
           "player": "总建造数",
-          "score": 580380
+          "score": 586510
         },
         {
           "player": "总建造数",
-          "score": 290190
+          "score": 293255
         },
         {
           "player": "caTvT",
-          "score": 73695
+          "score": 73720
         },
         {
           "player": "DaNeng520",
-          "score": 32662
+          "score": 32866
         },
         {
           "player": "cmbbx",
@@ -808,19 +812,19 @@
         },
         {
           "player": "Yik4u",
-          "score": 21257
+          "score": 22444
         },
         {
           "player": "gliese581g32",
-          "score": 20348
+          "score": 20551
         },
         {
           "player": "Figure_Arnold",
-          "score": 18770
+          "score": 19837
         },
         {
           "player": "Cristhel",
-          "score": 16553
+          "score": 16634
         },
         {
           "player": "yaoyikoutao",
@@ -836,7 +840,7 @@
         },
         {
           "player": "jumao12138",
-          "score": 8658
+          "score": 8679
         },
         {
           "player": "_lao_da_",
@@ -860,7 +864,7 @@
         },
         {
           "player": "A_Chai_",
-          "score": 2725
+          "score": 2730
         },
         {
           "player": "jiaran_114",
@@ -868,7 +872,7 @@
         },
         {
           "player": "moumouren",
-          "score": 917
+          "score": 1148
         },
         {
           "player": "coul",
@@ -880,11 +884,11 @@
         },
         {
           "player": "Xiao_o_",
-          "score": 213
+          "score": 237
         },
         {
           "player": "fafajvcn",
-          "score": 173
+          "score": 190
         },
         {
           "player": "1QWQ14514",
@@ -916,11 +920,11 @@
       "player_scores": [
         {
           "player": "总钓鱼数",
-          "score": 204
+          "score": 208
         },
         {
           "player": "总钓鱼数",
-          "score": 102
+          "score": 104
         },
         {
           "player": "gliese581g32",
@@ -937,6 +941,10 @@
         {
           "player": "_lao_da_",
           "score": 10
+        },
+        {
+          "player": "DaNeng520",
+          "score": 2
         }
       ]
     },
@@ -944,57 +952,57 @@
       "player_scores": [
         {
           "player": "总general",
-          "score": 5350486
+          "score": 5525770
         },
         {
           "player": "总飞行距离",
-          "score": 4281713
+          "score": 4446497
         },
         {
           "player": "总挖掘数",
-          "score": 647415
+          "score": 650805
         },
         {
           "player": "总建造数",
-          "score": 290190
+          "score": 293255
         },
         {
           "player": "总受伤害数",
-          "score": 86010
+          "score": 88984
         },
         {
           "player": "总击杀数",
-          "score": 28511
+          "score": 29199
         },
         {
           "player": "总交易数",
-          "score": 14840
+          "score": 15172
         },
         {
           "player": "总活跃时间",
-          "score": 1120
+          "score": 1141
         },
         {
           "player": "总死亡数",
-          "score": 585
+          "score": 613
         },
         {
           "player": "总钓鱼数",
-          "score": 102
+          "score": 104
         }
       ]
     }
   },
   "overall_statistics": {
-    "total_players_across_objectives": 235,
+    "total_players_across_objectives": 237,
     "objectives_found": [
-      "fzsd.module.scoreboard.display.trade_count",
       "fzsd.module.scoreboard.display.death_count",
-      "fzsd.module.scoreboard.display.damage_taken",
-      "fzsd.module.scoreboard.display.activation",
-      "fzsd.module.scoreboard.display.kill_count",
-      "fzsd.module.scoreboard.display.dig_count",
       "fzsd.module.scoreboard.display.aviating_distance",
+      "fzsd.module.scoreboard.display.dig_count",
+      "fzsd.module.scoreboard.display.activation",
+      "fzsd.module.scoreboard.display.trade_count",
+      "fzsd.module.scoreboard.display.damage_taken",
+      "fzsd.module.scoreboard.display.kill_count",
       "fzsd.module.scoreboard.display.placement_count",
       "fzsd.module.scoreboard.display.fishing_count",
       "fzsd.module.scoreboard.display.general"
